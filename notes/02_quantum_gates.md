@@ -284,10 +284,10 @@ $$
 
 | 入力 | 出力 | 説明 |
 |------|------|------|
-| $\|00\rangle$ | $\|00\rangle$ | 制御=0 → 何もしない |
-| $\|01\rangle$ | $\|01\rangle$ | 制御=0 → 何もしない |
-| $\|10\rangle$ | $\|11\rangle$ | 制御=1 → 標的を反転 |
-| $\|11\rangle$ | $\|10\rangle$ | 制御=1 → 標的を反転 |
+| $\vert 00\rangle$ | $\vert 00\rangle$ | 制御=0 → 何もしない |
+| $\vert 01\rangle$ | $\vert 01\rangle$ | 制御=0 → 何もしない |
+| $\vert 10\rangle$ | $\vert 11\rangle$ | 制御=1 → 標的を反転 |
+| $\vert 11\rangle$ | $\vert 10\rangle$ | 制御=1 → 標的を反転 |
 
 古典の XOR に相当する：標的ビットは「制御 XOR 標的」になる。
 
@@ -327,10 +327,10 @@ $$
 
 | 入力 | 出力 |
 |------|------|
-| $\|00\rangle$ | $\|00\rangle$ |
-| $\|01\rangle$ | $\|01\rangle$ |
-| $\|10\rangle$ | $\|10\rangle$ |
-| $\|11\rangle$ | $-\|11\rangle$ |
+| $\vert 00\rangle$ | $\vert 00\rangle$ |
+| $\vert 01\rangle$ | $\vert 01\rangle$ |
+| $\vert 10\rangle$ | $\vert 10\rangle$ |
+| $\vert 11\rangle$ | $-\vert 11\rangle$ |
 
 CZ ゲートは対称性を持ち、制御と標的の区別がない。どちらのビットを制御としても結果は同じである。
 
@@ -376,8 +376,8 @@ $$
 
 | 入力 | 出力 |
 |------|------|
-| $\|110\rangle$ | $\|111\rangle$ |
-| $\|111\rangle$ | $\|110\rangle$ |
+| $\vert 110\rangle$ | $\vert 111\rangle$ |
+| $\vert 111\rangle$ | $\vert 110\rangle$ |
 | その他 | 変化なし |
 
 トフォリゲートは **古典的に万能** である。すなわち、AND、OR、NOT などの古典論理ゲートをすべてトフォリゲートで構成できる。
