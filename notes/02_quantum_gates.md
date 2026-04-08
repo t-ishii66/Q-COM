@@ -312,8 +312,18 @@ $$
 結果の $\frac{\vert 00\rangle + \vert 11\rangle}{\sqrt{2}}$ は **ベル状態** $\vert\Phi^+\rangle$ と呼ばれる。この状態はテンソル積に分解できない、すなわちエンタングルした状態である。
 
 > **テンソル積に分解できないことの確認：**
-> $(\alpha\vert 0\rangle + \beta\vert 1\rangle) \otimes (\gamma\vert 0\rangle + \delta\vert 1\rangle) = \alpha\gamma\vert 00\rangle + \alpha\delta\vert 01\rangle + \beta\gamma\vert 10\rangle + \beta\delta\vert 11\rangle$
-> とおくと、$\vert 00\rangle$ の係数 $\alpha\gamma = 1/\sqrt{2}$、$\vert 01\rangle$ の係数 $\alpha\delta = 0$、$\vert 10\rangle$ の係数 $\beta\gamma = 0$、$\vert 11\rangle$ の係数 $\beta\delta = 1/\sqrt{2}$ を同時に満たす $\alpha, \beta, \gamma, \delta$ は存在しない（$\alpha\delta = 0$ かつ $\beta\gamma = 0$ なら $\alpha\gamma\beta\delta = 0$ だが、$\alpha\gamma \cdot \beta\delta = 1/2 \neq 0$）。
+>
+> $$
+> (\alpha\vert 0\rangle + \beta\vert 1\rangle) \otimes (\gamma\vert 0\rangle + \delta\vert 1\rangle) = \alpha\gamma\vert 00\rangle + \alpha\delta\vert 01\rangle + \beta\gamma\vert 10\rangle + \beta\delta\vert 11\rangle
+> $$
+>
+> とおくと、各係数が次を同時に満たす必要がある：
+>
+> $$
+> \alpha\gamma = \frac{1}{\sqrt{2}}, \quad \alpha\delta = 0, \quad \beta\gamma = 0, \quad \beta\delta = \frac{1}{\sqrt{2}}
+> $$
+>
+> しかし $\alpha\delta = 0$ かつ $\beta\gamma = 0$ なら $\alpha\gamma\beta\delta = 0$ となるはずだが、$\alpha\gamma \cdot \beta\delta = 1/2 \neq 0$ であり矛盾する。
 
 ---
 
