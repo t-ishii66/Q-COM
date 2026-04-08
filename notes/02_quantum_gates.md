@@ -148,7 +148,7 @@ $$
 
 $|1\rangle$ 成分に位相を付加するゲート群。$|0\rangle$ 成分は変化しない。
 
-#### 一般の位相ゲート $R_\phi$
+#### 一般の位相ゲート R_φ
 
 $$
 R_\phi = \begin{pmatrix} 1 & 0 \\ 0 & e^{i\phi} \end{pmatrix}
@@ -158,7 +158,7 @@ $$
 R_\phi(\alpha|0\rangle + \beta|1\rangle) = \alpha|0\rangle + \beta e^{i\phi}|1\rangle
 $$
 
-#### S ゲート（$\pi/2$ 位相ゲート）
+#### S ゲート（π/2 位相ゲート）
 
 $$
 S = \begin{pmatrix} 1 & 0 \\ 0 & i \end{pmatrix}
@@ -166,7 +166,7 @@ $$
 
 $|1\rangle$ に位相 $i = e^{i\pi/2}$ を付ける。$S^2 = Z$ という関係がある。
 
-#### T ゲート（$\pi/4$ 位相ゲート）
+#### T ゲート（π/4 位相ゲート）
 
 $$
 T = \begin{pmatrix} 1 & 0 \\ 0 & e^{i\pi/4} \end{pmatrix}
@@ -204,7 +204,7 @@ $$
 R_z(\theta) = \begin{pmatrix} e^{-i\theta/2} & 0 \\ 0 & e^{i\theta/2} \end{pmatrix}
 $$
 
-#### 具体例：$|0\rangle$ と $|1\rangle$ への作用
+#### 具体例：|0⟩ と |1⟩ への作用
 
 $\theta = \pi/2$（90度回転）の場合を計算する。$\cos\frac{\pi}{4} = \sin\frac{\pi}{4} = \frac{1}{\sqrt{2}}$ を用いる。
 
