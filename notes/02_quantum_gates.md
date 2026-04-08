@@ -323,7 +323,8 @@ $$
 > \alpha\gamma = \frac{1}{\sqrt{2}}, \quad \alpha\delta = 0, \quad \beta\gamma = 0, \quad \beta\delta = \frac{1}{\sqrt{2}}
 > $$
 >
-> しかし $\alpha\delta = 0$ かつ $\beta\gamma = 0$ なら $\alpha\gamma\beta\delta = 0$ となるはずだが、$\alpha\gamma \cdot \beta\delta = 1/2 \neq 0$ であり矛盾する。
+> しかし $\alpha\delta = 0$ かつ $\beta\gamma = 0$ なら $\alpha\gamma\beta\delta = 0$ となるはずだが、
+> $\alpha\gamma \cdot \beta\delta = 1/2 \neq 0$ であり矛盾する。
 
 ---
 
