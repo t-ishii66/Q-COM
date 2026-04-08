@@ -63,12 +63,12 @@ $$
 \vert\psi\rangle = \cos\frac{\theta}{2}\vert 0\rangle + e^{i\phi}\sin\frac{\theta}{2}\vert 1\rangle
 $$
 
-ここで $0 \le \theta \le \pi$、$0 \le \phi < 2\pi$ である。
+ここで $0 \le \theta \le \pi$、 $0 \le \phi \lt 2\pi$ である。
 
 これは単位球面上の点と一対一に対応し、この球面を **ブロッホ球** と呼ぶ：
-- 北極（$\theta = 0$）：$\vert 0\rangle$
-- 南極（$\theta = \pi$）：$\vert 1\rangle$
-- 赤道上（$\theta = \pi/2$）：$\vert 0\rangle$ と $\vert 1\rangle$ の等しい重ね合わせ
+- 北極 ($\theta = 0$): $\vert 0\rangle$
+- 南極 ($\theta = \pi$): $\vert 1\rangle$
+- 赤道上 ($\theta = \pi/2$): $\vert 0\rangle$ と $\vert 1\rangle$ の等しい重ね合わせ
 
 ブロッホ球は1量子ビットの状態を視覚的に理解するための強力なツールである。
 
@@ -98,7 +98,7 @@ $$
 \vert\psi_1\rangle \otimes \vert\psi_2\rangle = \alpha\gamma\vert 00\rangle + \alpha\delta\vert 01\rangle + \beta\gamma\vert 10\rangle + \beta\delta\vert 11\rangle
 $$
 
-ここで $\vert 00\rangle$ は $\vert 0\rangle \otimes \vert 0\rangle$ の省略記法である。$\vert\psi_1\rangle\vert\psi_2\rangle$ や $\vert\psi_1 \psi_2\rangle$ とも書く。
+ここで $\vert 00\rangle$ は $\vert 0\rangle \otimes \vert 0\rangle$ の省略記法である。 $\vert\psi_1\rangle\vert\psi_2\rangle$ や $\vert\psi_1 \psi_2\rangle$ とも書く。
 
 #### ベクトル表現
 
@@ -126,7 +126,7 @@ $$
 \vert +\rangle \otimes \vert 0\rangle = \frac{1}{\sqrt{2}}(\vert 0\rangle + \vert 1\rangle) \otimes \vert 0\rangle = \frac{\vert 00\rangle + \vert 10\rangle}{\sqrt{2}}
 $$
 
-この状態を測定すると、$\vert 00\rangle$ と $\vert 10\rangle$ がそれぞれ確率 $1/2$ で得られる。第2ビットは必ず 0 であり、2つのビットは **独立** に振る舞っている。
+この状態を測定すると、 $\vert 00\rangle$ と $\vert 10\rangle$ がそれぞれ確率 $1/2$ で得られる。第2ビットは必ず 0 であり、2つのビットは **独立** に振る舞っている。
 
 #### テンソル積の性質
 
