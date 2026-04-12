@@ -45,14 +45,34 @@ python3 -c "import qiskit_aer; print(qiskit_aer.__version__)"
 # → 0.17.2
 ```
 
-### 4. Jupyter Notebook の起動
+### 4. スクリプトの実行
+
+`src/` にある Python スクリプトは仮想環境を有効にした状態でそのまま実行できる：
+
+```bash
+source .venv/bin/activate
+python3 src/03_qft.py
+```
+
+ターミナルに QFT 回路の構造、計算例の結果、DFT 行列との一致確認が出力される。
+
+### 5. Jupyter Notebook の起動
 
 ```bash
 source .venv/bin/activate
 jupyter notebook
 ```
 
-ブラウザが開き、Notebook 一覧が表示される。
+ブラウザが開き、ファイル一覧が表示される。
+
+**注意：** Jupyter Notebook で実行できるのは `.ipynb` ファイルのみ。`.py` ファイルを選んでもソースがテキスト表示されるだけで、セル実行はできない。
+
+- `.py` スクリプト（`src/03_qft.py` など）→ ターミナルで `python3` で実行（手順4）
+- `.ipynb` ノートブック（`notes/03_discrete_fourier_transform.ipynb` など）→ Jupyter で開いて実行
+
+`notes/03_discrete_fourier_transform.ipynb` を開くと、ノートの数式と Qiskit のコード・回路図・グラフを一画面で確認できる。
+
+セルの実行は `Shift + Enter`（1セルずつ）または上部メニューの `Cell → Run All`（全セル一括）。
 
 ## バージョン情報（2026-04-08 時点）
 

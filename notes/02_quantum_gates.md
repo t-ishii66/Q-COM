@@ -278,7 +278,7 @@ $$
 \text{CNOT} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}
 $$
 
-基底に対する記法は $\vert\text{制御},\text{標的}\rangle$ の順とする。
+ここでは第1量子ビット $q_1$ を制御、第2量子ビット $q_2$ を標的とし、 $\vert q_1 q_2\rangle$ の順で書く。
 
 #### 計算基底への作用
 
@@ -297,13 +297,13 @@ CNOT ゲートの最も重要な応用は、アダマールゲートと組み合
 
 初期状態 $\vert 00\rangle$ から出発する：
 
-**ステップ1：** 第1量子ビットにアダマールゲートを適用
+**ステップ1：** 第1量子ビット $q_1$ にアダマールゲートを適用
 
 $$
 (H \otimes I)\vert 00\rangle = \frac{\vert 0\rangle + \vert 1\rangle}{\sqrt{2}} \otimes \vert 0\rangle = \frac{\vert 00\rangle + \vert 10\rangle}{\sqrt{2}}
 $$
 
-**ステップ2：** CNOT を適用（第1ビットが制御、第2ビットが標的）
+**ステップ2：** CNOT を適用（$q_1$ が制御、 $q_2$ が標的）
 
 $$
 \text{CNOT} \cdot \frac{\vert 00\rangle + \vert 10\rangle}{\sqrt{2}} = \frac{\vert 00\rangle + \vert 11\rangle}{\sqrt{2}}
@@ -375,7 +375,7 @@ $$
 \text{SWAP} = \text{CNOT}_{12} \cdot \text{CNOT}_{21} \cdot \text{CNOT}_{12}
 $$
 
-ここで $\text{CNOT}_{ij}$ は第 $i$ ビットが制御、第 $j$ ビットが標的の CNOT を意味する。
+ここで $\text{CNOT}_{ij}$ はビット $q_i$ が制御、ビット $q_j$ が標的の CNOT を意味する。
 
 ---
 
@@ -401,7 +401,7 @@ $$
 \text{Toffoli}\vert ab0\rangle = \vert ab(a \cdot b)\rangle
 $$
 
-第3ビットに $a$ AND $b$ の結果が書き込まれる。
+第3量子ビット $q_3$ に $a$ AND $b$ の結果が書き込まれる。
 
 ---
 
