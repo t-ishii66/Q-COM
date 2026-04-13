@@ -22,7 +22,7 @@ $$
 
 この条件により：
 - **状態ベクトルの正規化が保存される**（確率の合計が常に 1）
-- **可逆性が保証される**（$U^{-1} = U^\dagger$ なので、逆操作が常に存在する）
+- **可逆性が保証される**（ $U^{-1} = U^\dagger$ なので、逆操作が常に存在する）
 
 古典の論理ゲート（例えば AND）は不可逆な場合があるが、量子ゲートは必ず可逆である。
 
@@ -303,13 +303,15 @@ $$
 (H \otimes I)\vert 00\rangle = \frac{\vert 0\rangle + \vert 1\rangle}{\sqrt{2}} \otimes \vert 0\rangle = \frac{\vert 00\rangle + \vert 10\rangle}{\sqrt{2}}
 $$
 
-**ステップ2：** CNOT を適用（$q_1$ が制御、 $q_2$ が標的）
+**ステップ2：** CNOT を適用（ $q_1$ が制御、 $q_2$ が標的）
 
 $$
 \text{CNOT} \cdot \frac{\vert 00\rangle + \vert 10\rangle}{\sqrt{2}} = \frac{\vert 00\rangle + \vert 11\rangle}{\sqrt{2}}
 $$
 
 結果の $\frac{\vert 00\rangle + \vert 11\rangle}{\sqrt{2}}$ は **ベル状態** $\vert\Phi^+\rangle$ と呼ばれる。この状態はテンソル積に分解できない、すなわちエンタングルした状態である。
+
+![ベル状態生成回路](../images/02_bell_state.png)
 
 > **テンソル積に分解できないことの確認：**
 >
@@ -377,6 +379,8 @@ $$
 
 ここで $\text{CNOT}_{ij}$ はビット $q_i$ が制御、ビット $q_j$ が標的の CNOT を意味する。
 
+![SWAP ゲートの CNOT 分解](../images/02_swap_decomposition.png)
+
 ---
 
 ## 3量子ビットゲート
@@ -384,6 +388,8 @@ $$
 ### トフォリゲート（Toffoli Gate / CCNOT）
 
 2つの制御ビットと1つの標的ビットを持つ。両方の制御ビットが $\vert 1\rangle$ のときだけ、標的ビットに NOT を適用する。
+
+![トフォリゲート](../images/02_toffoli.png)
 
 | 入力 | 出力 |
 |------|------|
