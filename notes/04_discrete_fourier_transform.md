@@ -207,7 +207,7 @@ $$
 DFT は次のように書ける：
 
 $$
-\begin{pmatrix} X_0 \\ X_1 \\ \vdots \\ X_{N-1} \end{pmatrix} = F_N \begin{pmatrix} x_0 \\ x_1 \\ \vdots \\ x_{N-1} \end{pmatrix}
+\begin{pmatrix} X_0 \\\\ X_1 \\\\ \vdots \\\\ X_{N-1} \end{pmatrix} = F_N \begin{pmatrix} x_0 \\\\ x_1 \\\\ \vdots \\\\ x_{N-1} \end{pmatrix}
 $$
 
 ### ユニタリ性
@@ -252,13 +252,13 @@ $$
 DFT 行列の定義 $(F_N)_{kj} = \frac{1}{\sqrt{N}} \omega_N^{jk} = \frac{1}{\sqrt{N}} \left(e^{2\pi i / N}\right)^{jk}$ を $N \times N$ の行列として明示的に書くと：
 
 $$
-F_N = \frac{1}{\sqrt{N}} \begin{pmatrix} 1 & 1 & 1 & \cdots & 1 \\ 1 & \omega_N & \omega_N^2 & \cdots & \omega_N^{N-1} \\ 1 & \omega_N^2 & \omega_N^4 & \cdots & \omega_N^{2(N-1)} \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 1 & \omega_N^{N-1} & \omega_N^{2(N-1)} & \cdots & \omega_N^{(N-1)^2} \end{pmatrix}
+F_N = \frac{1}{\sqrt{N}} \begin{pmatrix} 1 & 1 & 1 & \cdots & 1 \\\\ 1 & \omega_N & \omega_N^2 & \cdots & \omega_N^{N-1} \\\\ 1 & \omega_N^2 & \omega_N^4 & \cdots & \omega_N^{2(N-1)} \\\\ \vdots & \vdots & \vdots & \ddots & \vdots \\\\ 1 & \omega_N^{N-1} & \omega_N^{2(N-1)} & \cdots & \omega_N^{(N-1)^2} \end{pmatrix}
 $$
 
 $N = 2$ の場合、 $\omega_2 = e^{2\pi i / 2} = -1$ なので：
 
 $$
-F_2 = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & \omega_2 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+F_2 = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\\\ 1 & \omega_2 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\\\ 1 & -1 \end{pmatrix}
 $$
 
 これはアダマールゲート $H$ の行列表現と完全に一致する（ノート02参照）。つまり **1量子ビットに対する量子フーリエ変換はアダマールゲートそのもの** である。
@@ -268,7 +268,7 @@ $$
 入力 $\mathbf{x} = (1, 0)^T$（1量子ビットの $\vert 0\rangle$ に対応）に DFT を適用する：
 
 $$
-\mathbf{X} = F_2 \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+\mathbf{X} = F_2 \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\\\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\\\ 1 \end{pmatrix}
 $$
 
 定義に沿って各成分を確認する。 $\mathbf{x} = (1, 0)^T$ なので $x_0 = 1,\; x_1 = 0$ である：
@@ -286,7 +286,7 @@ $$
 もう一つ、入力 $\mathbf{x} = (1, 1)^T / \sqrt{2}$（ $\vert +\rangle$ に対応）に DFT を適用する：
 
 $$
-F_2 \cdot \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \cdot \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 2 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}
+F_2 \cdot \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\\\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\\\ 1 & -1 \end{pmatrix} \cdot \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\\\ 1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 2 \\\\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\\\ 0 \end{pmatrix}
 $$
 
 $\vert +\rangle$ にアダマールゲートを適用すると $\vert 0\rangle$ に戻る、という事実と一致する。
@@ -306,7 +306,7 @@ $$
 DFT 行列の $(k, j)$ 成分は $\frac{1}{\sqrt{4}} \omega_4^{jk} = \frac{1}{2} i^{jk}$ なので：
 
 $$
-F_4 = \frac{1}{2} \begin{pmatrix} i^{0 \cdot 0} & i^{1 \cdot 0} & i^{2 \cdot 0} & i^{3 \cdot 0} \\ i^{0 \cdot 1} & i^{1 \cdot 1} & i^{2 \cdot 1} & i^{3 \cdot 1} \\ i^{0 \cdot 2} & i^{1 \cdot 2} & i^{2 \cdot 2} & i^{3 \cdot 2} \\ i^{0 \cdot 3} & i^{1 \cdot 3} & i^{2 \cdot 3} & i^{3 \cdot 3} \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 & 1 & 1 \\ 1 & i & -1 & -i \\ 1 & -1 & 1 & -1 \\ 1 & -i & -1 & i \end{pmatrix}
+F_4 = \frac{1}{2} \begin{pmatrix} i^{0 \cdot 0} & i^{1 \cdot 0} & i^{2 \cdot 0} & i^{3 \cdot 0} \\\\ i^{0 \cdot 1} & i^{1 \cdot 1} & i^{2 \cdot 1} & i^{3 \cdot 1} \\\\ i^{0 \cdot 2} & i^{1 \cdot 2} & i^{2 \cdot 2} & i^{3 \cdot 2} \\\\ i^{0 \cdot 3} & i^{1 \cdot 3} & i^{2 \cdot 3} & i^{3 \cdot 3} \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 & 1 & 1 \\\\ 1 & i & -1 & -i \\\\ 1 & -1 & 1 & -1 \\\\ 1 & -i & -1 & i \end{pmatrix}
 $$
 
 各成分の計算を明示する（ $i^n$ の値は 4 周期で $1, i, -1, -i$ を繰り返す）：
@@ -314,15 +314,15 @@ $$
 $$
 \begin{array}{|c|c|c|}
 \hline
-jk & jk \mod 4 & i^{jk} \\
+jk & jk \mod 4 & i^{jk} \\\\
 \hline
-0 & 0 & 1 \\
-1 & 1 & i \\
-2 & 2 & -1 \\
-3 & 3 & -i \\
-4 & 0 & 1 \\
-6 & 2 & -1 \\
-9 & 1 & i \\
+0 & 0 & 1 \\\\
+1 & 1 & i \\\\
+2 & 2 & -1 \\\\
+3 & 3 & -i \\\\
+4 & 0 & 1 \\\\
+6 & 2 & -1 \\\\
+9 & 1 & i \\\\
 \hline
 \end{array}
 $$
@@ -332,7 +332,7 @@ $$
 入力 $\mathbf{x} = \frac{1}{2}(1, 1, 1, 1)^T$（すべての成分が等しい）に DFT を適用する：
 
 $$
-F_4 \cdot \frac{1}{2} \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 & 1 & 1 \\ 1 & i & -1 & -i \\ 1 & -1 & 1 & -1 \\ 1 & -i & -1 & i \end{pmatrix} \cdot \frac{1}{2} \begin{pmatrix} 1 \\ 1 \\ 1 \\ 1 \end{pmatrix}
+F_4 \cdot \frac{1}{2} \begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\\\ 1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1 & 1 & 1 & 1 \\\\ 1 & i & -1 & -i \\\\ 1 & -1 & 1 & -1 \\\\ 1 & -i & -1 & i \end{pmatrix} \cdot \frac{1}{2} \begin{pmatrix} 1 \\\\ 1 \\\\ 1 \\\\ 1 \end{pmatrix}
 $$
 
 各成分を計算する：

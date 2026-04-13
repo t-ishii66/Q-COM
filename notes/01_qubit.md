@@ -29,14 +29,14 @@ $$
 具体的にベクトルで書くと：
 
 $$
-\vert 0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad
-\vert 1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\vert 0\rangle = \begin{pmatrix} 1 \\\\ 0 \end{pmatrix}, \quad
+\vert 1\rangle = \begin{pmatrix} 0 \\\\ 1 \end{pmatrix}
 $$
 
 したがって一般の量子ビット状態は：
 
 $$
-\vert\psi\rangle = \alpha \begin{pmatrix} 1 \\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}
+\vert\psi\rangle = \alpha \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} + \beta \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} = \begin{pmatrix} \alpha \\\\ \beta \end{pmatrix}
 $$
 
 ## 測定（Measurement）
@@ -116,13 +116,13 @@ $$
 テンソル積はベクトルの **クロネッカー積** に対応する：
 
 $$
-\vert 0\rangle \otimes \vert 0\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix} \\ 0 \cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix}
+\vert 0\rangle \otimes \vert 0\rangle = \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} \otimes \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} = \begin{pmatrix} 1 \cdot \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} \\\\ 0 \cdot \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{pmatrix}
 $$
 
 $\vert 01\rangle$ も同じ手順で展開できる。第1量子ビット $q_1 = 0$、第2量子ビット $q_2 = 1$ である：
 
 $$
-\vert 0\rangle \otimes \vert 1\rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} \\ 0 \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 0 \end{pmatrix}
+\vert 0\rangle \otimes \vert 1\rangle = \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} = \begin{pmatrix} 1 \cdot \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} \\\\ 0 \cdot \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\\\ 0 \end{pmatrix}
 $$
 
 クロネッカー積の規則は「左のベクトルの各成分に、右のベクトル全体を掛ける」である。 $\vert 00\rangle$ では右が $(1, 0)^T$ だったので上半分に 1 が立ち、 $\vert 01\rangle$ では右が $(0, 1)^T$ に変わったので上半分の中の2番目に 1 が立つ。
@@ -130,8 +130,8 @@ $$
 残り2つも同じ規則で計算すると：
 
 $$
-\vert 10\rangle = \begin{pmatrix} 0 \\ 0 \\ 1 \\ 0 \end{pmatrix}, \quad
-\vert 11\rangle = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 1 \end{pmatrix}
+\vert 10\rangle = \begin{pmatrix} 0 \\\\ 0 \\\\ 1 \\\\ 0 \end{pmatrix}, \quad
+\vert 11\rangle = \begin{pmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 1 \end{pmatrix}
 $$
 
 これらが $2^2 = 4$ 次元空間の計算基底を成す。
@@ -189,7 +189,7 @@ $$
 **行列表現：** $A \otimes B$ の行列もクロネッカー積で計算される。例えば $X \otimes I$ は：
 
 $$
-X \otimes I = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 \cdot I & 1 \cdot I \\ 1 \cdot I & 0 \cdot I \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \end{pmatrix}
+X \otimes I = \begin{pmatrix} 0 & 1 \\\\ 1 & 0 \end{pmatrix} \otimes \begin{pmatrix} 1 & 0 \\\\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 \cdot I & 1 \cdot I \\\\ 1 \cdot I & 0 \cdot I \end{pmatrix} = \begin{pmatrix} 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \end{pmatrix}
 $$
 
 この $4 \times 4$ 行列を $\vert 00\rangle = (1,0,0,0)^T$ に掛けると $(0,0,1,0)^T = \vert 10\rangle$ が得られ、上の計算と一致する。

@@ -291,7 +291,7 @@ $$
 $U$ を1量子ビットの位相ゲートとする（ノート02参照）：
 
 $$
-U = R_\varphi = \begin{pmatrix} 1 & 0 \\ 0 & e^{2\pi i \varphi} \end{pmatrix}
+U = R_\varphi = \begin{pmatrix} 1 & 0 \\\\ 0 & e^{2\pi i \varphi} \end{pmatrix}
 $$
 
 固有ベクトルは $\vert 1\rangle$ であり、 $U\vert 1\rangle = e^{2\pi i \varphi}\vert 1\rangle$ である。
@@ -382,7 +382,7 @@ $$
 この状態が $F_4\vert s\rangle$ の形になっていることを確認する。ノート04で求めた $F_4$ の行列と、各計算基底への作用を再掲する：
 
 $$
-F_4 = \frac{1}{2}\begin{pmatrix} 1 & 1 & 1 & 1 \\ 1 & i & -1 & -i \\ 1 & -1 & 1 & -1 \\ 1 & -i & -1 & i \end{pmatrix}
+F_4 = \frac{1}{2}\begin{pmatrix} 1 & 1 & 1 & 1 \\\\ 1 & i & -1 & -i \\\\ 1 & -1 & 1 & -1 \\\\ 1 & -i & -1 & i \end{pmatrix}
 $$
 
 | 入力 | $j$（10進） | $F_4\vert j\rangle$ |
@@ -395,7 +395,7 @@ $$
 各行は $F_4$ の列を読んだものである。例えば $F_4\vert 01\rangle$ は $F_4$ の第1列（0-indexed）であり：
 
 $$
-F_4\vert 01\rangle = \frac{1}{2}\begin{pmatrix} 1 \\ i \\ -1 \\ -i \end{pmatrix} = \frac{1}{2}(\vert 00\rangle + i\vert 01\rangle - \vert 10\rangle - i\vert 11\rangle)
+F_4\vert 01\rangle = \frac{1}{2}\begin{pmatrix} 1 \\\\ i \\\\ -1 \\\\ -i \end{pmatrix} = \frac{1}{2}(\vert 00\rangle + i\vert 01\rangle - \vert 10\rangle - i\vert 11\rangle)
 $$
 
 これはステップ2の後の第1レジスタの状態 $(1, i, -1, -i)^T / 2$ と完全に一致する。つまり：
