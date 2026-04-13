@@ -47,12 +47,12 @@ $$
 $$
 \begin{array}{|c|c|}
 \hline
-k & 7^k \mod 15 \\
+k & 7^k \mod 15 \\\\
 \hline
-1 & 7 \\
-2 & 49 \mod 15 = 4 \\
-3 & 4 \times 7 \mod 15 = 28 \mod 15 = 13 \\
-4 & 13 \times 7 \mod 15 = 91 \mod 15 = 1 \\
+1 & 7 \\\\
+2 & 49 \mod 15 = 4 \\\\
+3 & 4 \times 7 \mod 15 = 28 \mod 15 = 13 \\\\
+4 & 13 \times 7 \mod 15 = 91 \mod 15 = 1 \\\\
 \hline
 \end{array}
 $$
