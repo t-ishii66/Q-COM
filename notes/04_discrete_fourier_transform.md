@@ -21,7 +21,7 @@
 連続的な関数 $f(t)$ に対するフーリエ変換は、積分で定義される：
 
 $$
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(t) \, e^{-2\pi i \xi t} \, dt
+\hat{f}(\xi) = \int_{-\infty}^{\infty} f(t)  e^{-2\pi i \xi t}  dt
 $$
 
 入力は連続関数 $f(t)$、出力も連続関数 $\hat{f}(\xi)$ である。 $\xi$ は周波数を表し、 $\hat{f}(\xi)$ は「周波数 $\xi$ の成分がどれだけ含まれるか」を与える。核となる仕組みは $e^{-2\pi i \xi t}$（周波数 $\xi$ の複素正弦波）との内積を取ることである。
@@ -103,7 +103,7 @@ $$
 #### 直交関係（最重要）
 
 $$
-\frac{1}{N} \sum_{j=0}^{N-1} \omega_N^{j(k - k')} = \frac{1}{N} \sum_{j=0}^{N-1} e^{2\pi i \, j(k - k') / N} = \delta_{k,k'}
+\frac{1}{N} \sum_{j=0}^{N-1} \omega_N^{j(k - k')} = \frac{1}{N} \sum_{j=0}^{N-1} e^{2\pi i  j(k - k') / N} = \delta_{k,k'}
 $$
 
 ここで $\delta_{k,k'}$ はクロネッカーのデルタであり、 $k \equiv k' \pmod{N}$ のとき 1、それ以外のとき 0 である。中辺は $\omega_N = e^{2\pi i/N}$ の定義を代入したものである。
@@ -139,7 +139,7 @@ $$
 $N$ 個の複素数の列 $x_0, x_1, \ldots, x_{N-1}$ が与えられたとき、その **離散フーリエ変換** $X_0, X_1, \ldots, X_{N-1}$ を次で定義する：
 
 $$
-X_k = \frac{1}{\sqrt{N}} \sum_{j=0}^{N-1} x_j \, \omega_N^{jk} \qquad (k = 0, 1, \ldots, N-1)
+X_k = \frac{1}{\sqrt{N}} \sum_{j=0}^{N-1} x_j  \omega_N^{jk} \qquad (k = 0, 1, \ldots, N-1)
 $$
 
 ここで $\omega_N = e^{2\pi i / N}$ である。
@@ -153,7 +153,7 @@ $$
 逆離散フーリエ変換は次で与えられる：
 
 $$
-x_j = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} X_k \, \omega_N^{-jk} \qquad (j = 0, 1, \ldots, N-1)
+x_j = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} X_k  \omega_N^{-jk} \qquad (j = 0, 1, \ldots, N-1)
 $$
 
 順変換との違いは $\omega_N^{jk}$ が $\omega_N^{-jk}$ に変わっただけである（指数の符号が反転）。
@@ -163,7 +163,7 @@ $$
 逆変換の式に順変換の定義を代入して、元の $x_j$ が復元されることを確かめる。
 
 $$
-\frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} X_k \, \omega_N^{-jk} = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \left( \frac{1}{\sqrt{N}} \sum_{j'=0}^{N-1} x_{j'} \, \omega_N^{j'k} \right) \omega_N^{-jk}
+\frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} X_k  \omega_N^{-jk} = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} \left( \frac{1}{\sqrt{N}} \sum_{j'=0}^{N-1} x_{j'}  \omega_N^{j'k} \right) \omega_N^{-jk}
 $$
 
 和の順序を交換する：
@@ -183,7 +183,7 @@ $$
 よって：
 
 $$
-= \sum_{j'=0}^{N-1} x_{j'} \, \delta_{j',j} = x_j
+= \sum_{j'=0}^{N-1} x_{j'}  \delta_{j',j} = x_j
 $$
 
 確かに元の列が復元される。
@@ -380,7 +380,7 @@ $$
 入力 $\mathbf{x} = (1, 0, 0, 0)^T$（第0成分のみ）に DFT を適用する：
 
 $$
-X_k = \frac{1}{2} \sum_{j=0}^{3} x_j \, \omega_4^{jk} = \frac{1}{2} \cdot 1 \cdot \omega_4^{0 \cdot k} = \frac{1}{2}
+X_k = \frac{1}{2} \sum_{j=0}^{3} x_j  \omega_4^{jk} = \frac{1}{2} \cdot 1 \cdot \omega_4^{0 \cdot k} = \frac{1}{2}
 $$
 
 すべての $k$ で $X_k = 1/2$ である。結果は $\frac{1}{2}(1, 1, 1, 1)^T$ である。
@@ -402,7 +402,7 @@ $$
 DFT は線形変換である。入力 $\mathbf{x}$ と $\mathbf{y}$ に対して：
 
 $$
-\text{DFT}(\alpha \mathbf{x} + \beta \mathbf{y}) = \alpha \, \text{DFT}(\mathbf{x}) + \beta \, \text{DFT}(\mathbf{y})
+\text{DFT}(\alpha \mathbf{x} + \beta \mathbf{y}) = \alpha  \text{DFT}(\mathbf{x}) + \beta  \text{DFT}(\mathbf{y})
 $$
 
 これは DFT が行列の積で表されることから自明である。
