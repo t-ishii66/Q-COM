@@ -72,6 +72,8 @@ $$
 
 ブロッホ球は1量子ビットの状態を視覚的に理解するための強力なツールである。
 
+> **参考:** ブロッホ球の物理ノート — https://t-ishii66.github.io/quantum-spin-notes/
+
 ## 複数量子ビット
 
 $n$ 個の量子ビットの状態は $2^n$ 次元の複素ベクトル空間で記述される。
@@ -125,7 +127,7 @@ $$
 \vert 0\rangle \otimes \vert 1\rangle = \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} = \begin{pmatrix} 1 \cdot \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} \\\\ 0 \cdot \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} \end{pmatrix} = \begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\\\ 0 \end{pmatrix}
 $$
 
-クロネッカー積の規則は「左のベクトルの各成分に、右のベクトル全体を掛ける」である。 $\vert 00\rangle$ では右が $(1, 0)^T$ だったので上半分に 1 が立ち、 $\vert 01\rangle$ では右が $(0, 1)^T$ に変わったので上半分の中の2番目に 1 が立つ。
+クロネッカー積の規則は「左のベクトルの各成分に、右のベクトル全体を掛ける」である。 $\vert 00\rangle$ では右が $(1, 0)^T$ だったので上半分の1番目に 1 が立ち、 $\vert 01\rangle$ では右が $(0, 1)^T$ に変わったので上半分の中の2番目に 1 が立つ。
 
 残り2つも同じ規則で計算すると：
 

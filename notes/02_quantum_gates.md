@@ -148,7 +148,7 @@ $$
 
 $\vert 1\rangle$ 成分に位相を付加するゲート群。 $\vert 0\rangle$ 成分は変化しない。
 
-#### 一般の位相ゲート R_φ
+#### 一般の位相ゲート $R_\phi$
 
 $$
 R_\phi = \begin{pmatrix} 1 & 0 \\\\ 0 & e^{i\phi} \end{pmatrix}
@@ -190,18 +190,54 @@ $$
 
 ### 回転ゲート（Rotation Gates）
 
-ブロッホ球の各軸まわりの任意角度の回転を表す。
+ブロッホ球の各軸まわりの任意角度の回転を表す。パウリゲートが「 $\pi$ 回転」という固定の操作だったのに対し、回転ゲートは任意の角度 $\theta$ をパラメータに取る連続的な操作である。
+
+#### なぜこれが「回転」になるのか — 行列指数関数からの導出
+
+回転ゲートは天下り的に与えられているように見えるが、実はパウリ行列から自然に導かれる。
+
+パウリ行列 $\sigma$ （ $X, Y, Z$ のいずれか）はエルミート（ $\sigma^\dagger = \sigma$ ）で $\sigma^2 = I$ を満たす。このとき、 $\sigma$ を回転軸、 $\theta$ を回転角として、
 
 $$
-R_x(\theta) = \begin{pmatrix} \cos\frac{\theta}{2} & -i\sin\frac{\theta}{2} \\\\ -i\sin\frac{\theta}{2} & \cos\frac{\theta}{2} \end{pmatrix}
+R_\sigma(\theta) \;\equiv\; e^{-i\frac{\theta}{2}\sigma}
 $$
 
-$$
-R_y(\theta) = \begin{pmatrix} \cos\frac{\theta}{2} & -\sin\frac{\theta}{2} \\\\ \sin\frac{\theta}{2} & \cos\frac{\theta}{2} \end{pmatrix}
-$$
+を定義する。 $R_\sigma(\theta)$ は「パウリ行列 $\sigma$ が表す軸まわりに、ブロッホ球上で角度 $\theta$ だけ回転させるユニタリ行列」を意味する。たとえば $R_X(\pi/2)$ は X 軸まわりに 90° 回転する操作である（詳しくは [ブロッホ球の物理ノート](https://t-ishii66.github.io/quantum-spin-notes/) を参照）。
+
+この行列がユニタリであることは $\sigma^\dagger = \sigma$ からすぐにわかる（ $R^\dagger R = e^{+i\frac{\theta}{2}\sigma} e^{-i\frac{\theta}{2}\sigma} = I$ ）。指数の肩に $\theta$ ではなく $\theta/2$ が現れる理由は、後述の「半角の謎」で詳しく見る。
+
+$\sigma^2 = I$ を使うと、この行列指数関数を初等関数で表せる。 $\sigma$ のべき乗は $I$ と $\sigma$ の交互繰り返しなので、テイラー展開を偶数次（ $\sigma^{2k} = I$ ）と奇数次（ $\sigma^{2k+1} = \sigma$ ）に分けると、
 
 $$
-R_z(\theta) = \begin{pmatrix} e^{-i\theta/2} & 0 \\\\ 0 & e^{i\theta/2} \end{pmatrix}
+e^{-i\frac{\theta}{2}\sigma} = \left[\sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}\left(\frac{\theta}{2}\right)^{2k}\right] I \;-\; i\left[\sum_{k=0}^{\infty} \frac{(-1)^k}{(2k+1)!}\left(\frac{\theta}{2}\right)^{2k+1}\right] \sigma
+$$
+
+カッコ内はそれぞれ $\cos(\theta/2)$, $\sin(\theta/2)$ のテイラー展開そのものである。よって、
+
+$$
+R_\sigma(\theta) \;=\; \cos\!\frac{\theta}{2}\, I \;-\; i\sin\!\frac{\theta}{2}\, \sigma
+$$
+
+これはオイラーの公式 $e^{i\alpha} = \cos\alpha + i\sin\alpha$ の行列版である。 $\sigma = X, Y, Z$ を代入すれば、3つの回転行列が得られる。
+
+#### 各軸まわりの回転行列
+
+**$R_x(\theta)$：** $\sigma = X$ を代入する。
+
+$$
+R_x(\theta) = \cos\frac{\theta}{2}\, I - i\sin\frac{\theta}{2}\, X = \cos\frac{\theta}{2} \begin{pmatrix} 1 & 0 \\\\ 0 & 1 \end{pmatrix} - i\sin\frac{\theta}{2} \begin{pmatrix} 0 & 1 \\\\ 1 & 0 \end{pmatrix} = \begin{pmatrix} \cos\frac{\theta}{2} & -i\sin\frac{\theta}{2} \\\\ -i\sin\frac{\theta}{2} & \cos\frac{\theta}{2} \end{pmatrix}
+$$
+
+**$R_y(\theta)$：** $\sigma = Y$ を代入する。 $-iY = -i\begin{pmatrix} 0 & -i \\\\ i & 0 \end{pmatrix} = \begin{pmatrix} 0 & -1 \\\\ 1 & 0 \end{pmatrix}$ に注意すると、
+
+$$
+R_y(\theta) = \cos\frac{\theta}{2}\, I - i\sin\frac{\theta}{2}\, Y = \begin{pmatrix} \cos\frac{\theta}{2} & -\sin\frac{\theta}{2} \\\\ \sin\frac{\theta}{2} & \cos\frac{\theta}{2} \end{pmatrix}
+$$
+
+**$R_z(\theta)$：** $\sigma = Z$ を代入する。対角成分は $\cos(\theta/2) \mp i\sin(\theta/2) = e^{\mp i\theta/2}$（オイラーの公式）となり、
+
+$$
+R_z(\theta) = \cos\frac{\theta}{2}\, I - i\sin\frac{\theta}{2}\, Z = \begin{pmatrix} e^{-i\theta/2} & 0 \\\\ 0 & e^{i\theta/2} \end{pmatrix}
 $$
 
 #### 具体例：|0⟩ と |1⟩ への作用
@@ -215,11 +251,11 @@ R_x\!\left(\frac{\pi}{2}\right) = \begin{pmatrix} \frac{1}{\sqrt{2}} & \frac{-i}
 $$
 
 $$
-R_x\!\left(\frac{\pi}{2}\right)\vert 0\rangle = \frac{1}{\sqrt{2}}\vert 0\rangle - \frac{i}{\sqrt{2}}\vert 1\rangle
+R_x\!\left(\frac{\pi}{2}\right)\vert 0\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} & \frac{-i}{\sqrt{2}} \\\\ \frac{-i}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{pmatrix} \begin{pmatrix} 1 \\\\ 0 \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{2}} \\\\ \frac{-i}{\sqrt{2}} \end{pmatrix} = \frac{1}{\sqrt{2}}\vert 0\rangle - \frac{i}{\sqrt{2}}\vert 1\rangle
 $$
 
 $$
-R_x\!\left(\frac{\pi}{2}\right)\vert 1\rangle = -\frac{i}{\sqrt{2}}\vert 0\rangle + \frac{1}{\sqrt{2}}\vert 1\rangle
+R_x\!\left(\frac{\pi}{2}\right)\vert 1\rangle = \begin{pmatrix} \frac{1}{\sqrt{2}} & \frac{-i}{\sqrt{2}} \\\\ \frac{-i}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{pmatrix} \begin{pmatrix} 0 \\\\ 1 \end{pmatrix} = \begin{pmatrix} \frac{-i}{\sqrt{2}} \\\\ \frac{1}{\sqrt{2}} \end{pmatrix} = -\frac{i}{\sqrt{2}}\vert 0\rangle + \frac{1}{\sqrt{2}}\vert 1\rangle
 $$
 
 $\vert 0\rangle$（北極）から X 軸まわりに 90 度回転し、赤道上に移る。測定すると $\vert 0\rangle$, $\vert 1\rangle$ が等確率で得られる。
@@ -255,6 +291,44 @@ R_z\!\left(\frac{\pi}{2}\right)\vert 1\rangle = e^{i\pi/4}\vert 1\rangle
 $$
 
 $\vert 0\rangle$ と $\vert 1\rangle$ はどちらも全体位相が付くだけで、測定確率は変化しない。Z 軸上の点（北極・南極）は Z 軸まわりの回転で動かないためである。 $R_z$ の効果は重ね合わせ状態に作用させたときに現れる。
+
+#### 本当に「回転」になっているかの確認（ $R_z$ で見る）
+
+導出の最後の確認として、 $R_z(\theta)$ を一般の量子状態に作用させ、ブロッホ球上で本当に Z 軸まわりに角度 $\theta$ 回転していることを見る。ブロッホ球上で極角 $\eta$ ・方位角 $\varphi$ の点に対応する状態は、
+
+$$
+\vert\psi\rangle = \cos\frac{\eta}{2}\vert 0\rangle + e^{i\varphi}\sin\frac{\eta}{2}\vert 1\rangle
+$$
+
+であった（ノート 01 参照）。これに $R_z(\theta)$ を作用させると、
+
+$$
+R_z(\theta)\vert\psi\rangle = e^{-i\theta/2}\cos\frac{\eta}{2}\vert 0\rangle + e^{i\theta/2}e^{i\varphi}\sin\frac{\eta}{2}\vert 1\rangle
+$$
+
+全体位相 $e^{-i\theta/2}$ は観測に影響しないので括り出すと、
+
+$$
+R_z(\theta)\vert\psi\rangle = e^{-i\theta/2}\left[\cos\frac{\eta}{2}\vert 0\rangle + e^{i(\varphi+\theta)}\sin\frac{\eta}{2}\vert 1\rangle\right]
+$$
+
+すなわち極角 $\eta$ は変わらず、 **方位角だけが $\varphi \to \varphi + \theta$ と変化** している。これはブロッホ球上で Z 軸まわりに角度 $\theta$ 回転したことに他ならない。 $R_x, R_y$ についても、別の軸を中心とした同様の計算で「回転」になっていることが確認できる。
+
+#### 半角 $\theta/2$ の謎 — スピノルとしての量子ビット
+
+ここまでで、回転ゲートの行列要素にはすべて $\theta/2$ が現れていることに気づくはずだ。これは導出の途中で出てきた指数 $e^{-i\theta\sigma/2}$ の半分から来ているのだが、それ自体は何を意味するのか。 $R_z(2\pi)$ を計算してみると、
+
+$$
+R_z(2\pi) = \begin{pmatrix} e^{-i\pi} & 0 \\\\ 0 & e^{i\pi} \end{pmatrix} = \begin{pmatrix} -1 & 0 \\\\ 0 & -1 \end{pmatrix} = -I
+$$
+
+ブロッホ球上では「1 周回って元に戻った」はずなのに、状態ベクトルには全体位相 $-1$ が付いてしまう。元の状態ベクトルに戻るには $4\pi$ ＝ 720° 回す必要がある：
+
+$$
+R_z(4\pi) = I
+$$
+
+これは数式上の不備ではなく、量子ビット（スピン 1/2 系）の本質的な性質である。3次元空間の回転（360° で元に戻る）と量子状態の変換（720° で元に戻る）は **2 対 1** に対応しており、 $\pm U$ という符号の異なる 2 つのユニタリ行列が同じ 3 次元回転に対応する。これを **スピノルの二重被覆** と呼ぶ。全体位相 $-1$ は単独の状態では観測できないが、他の量子ビットと干渉させることで実験的に検出可能な、れっきとした物理的効果である。
 
 #### パウリゲートとの関係
 
@@ -313,6 +387,8 @@ $$
 
 ![ベル状態生成回路](../images/02_bell_state.png)
 
+> **注意：** 量子回路図では量子ビットを上から $q_0, q_1, q_2, \ldots$ のように **0 から番号付け** するのが慣例である。これはプログラミングの配列インデックスと同じ流儀であり、多くの量子計算フレームワーク（Qiskit など）もこれに従う。
+
 > **テンソル積に分解できないことの確認：**
 >
 > $$
@@ -347,16 +423,6 @@ $$
 
 CZ ゲートは対称性を持ち、制御と標的の区別がない。どちらのビットを制御としても結果は同じである。
 
-#### CNOT との関係
-
-CZ の標的ビットの前後にアダマールゲートを挟むと CNOT になる：
-
-$$
-\text{CNOT} = (I \otimes H) \cdot \text{CZ} \cdot (I \otimes H)
-$$
-
-これは $HZH = X$ という関係に基づいている。
-
 ---
 
 ### SWAP ゲート
@@ -371,13 +437,28 @@ $$
 \text{SWAP}\vert ab\rangle = \vert ba\rangle
 $$
 
-SWAP は3つの CNOT で実装できる：
+SWAP は3つの CNOT で実装できる。 $\text{CNOT}_{ij}$ はビット $q_i$ が制御、 $q_j$ が標的の CNOT を意味する。
 
 $$
 \text{SWAP} = \text{CNOT}_{12} \cdot \text{CNOT}_{21} \cdot \text{CNOT}_{12}
 $$
 
-ここで $\text{CNOT}_{ij}$ はビット $q_i$ が制御、ビット $q_j$ が標的の CNOT を意味する。
+具体例で追ってみると、なぜこれでスワップになるかがわかる。 $(q_1, q_2) = (1, 0)$ の場合：
+
+| ステップ | 操作 | $q_1$ | $q_2$ | 説明 |
+|------|------|:---:|:---:|------|
+| 初期状態 | — | 1 | 0 | |
+| 1 | $\text{CNOT}_{12}$ | 1 | 1 | $q_1=1$ なので $q_2$ を反転 |
+| 2 | $\text{CNOT}_{21}$ | 0 | 1 | $q_2=1$ なので $q_1$ を反転 |
+| 3 | $\text{CNOT}_{12}$ | 0 | 1 | $q_1=0$ なので $q_2$ は変化なし |
+
+結果は $(0, 1)$ となり、入れ替わっている。他の入力でも確認すると：
+
+- $(0, 0)$：3ステップとも何も起きず $(0, 0)$ のまま
+- $(1, 1)$：順に $(1,0) \to (1,0) \to (1,1)$ — 結果は $(1, 1)$ で変化なし
+- $(0, 1)$：ステップ1で $q_1=0$ なので変化なし、ステップ2で $q_2=1$ なので $q_1$ 反転 → $(1, 1)$、ステップ3で $q_1=1$ なので $q_2$ 反転 → $(1, 0)$ — スワップ完了
+
+いずれの場合も $q_1$ と $q_2$ の値が正しく入れ替わる。
 
 ![SWAP ゲートの CNOT 分解](../images/02_swap_decomposition.png)
 
