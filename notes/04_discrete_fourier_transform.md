@@ -115,7 +115,7 @@ $$
 $k = k'$ の場合、 $\omega_N^{j \cdot 0} = 1$ なので和は $N$ となり、 $1/N$ を掛けて 1 になる。
 
 $k \neq k'$ の場合、 $m = k - k' \not\equiv 0 \pmod{N}$ とおくと：
-しつｒ
+
 $$
 \sum_{j=0}^{N-1} \omega_N^{jm} = \sum_{j=0}^{N-1} (\omega_N^m)^j
 $$

@@ -72,7 +72,7 @@ QPE の回路は3つのステップからなる：
 
 ### 定義
 
-$n$ 量子ビットのユニタリ演算子 $U$ に対して、**制御 $U$ ゲート**（controlled-$U$）は次のように動作する：
+$n$ 量子ビットのユニタリ演算子 $U$ に対して、**制御 $U$ ゲート**（$\text{controlled-}U$）は次のように動作する：
 
 $$
 CU\vert 0\rangle\vert\psi\rangle = \vert 0\rangle\vert\psi\rangle, \quad CU\vert 1\rangle\vert\psi\rangle = \vert 1\rangle(U\vert\psi\rangle)
@@ -240,7 +240,19 @@ $$
 
 一方、 $F_N\vert s\rangle$ がどのような状態になるかを、DFT 行列の定義から直接計算してみる。
 
-行列 $F_N$ をベクトル $\vert s\rangle$ に掛けるとは、出力の第 $k$ 成分を $\sum_j (F_N)_{kj} (\vert s\rangle)_j$ で計算することである。 $\vert s\rangle$ は計算基底なので第 $s$ 成分だけが 1、他はすべて 0 である。したがって和の中で $j = s$ の項だけが生き残る：
+行列 $F_N$ をベクトル $\vert s\rangle$ に掛けるとは、出力の第 $k$ 成分を $\sum_j (F_N)_{kj} (\vert s\rangle)_j$ で計算することである。 $\vert s\rangle$ は計算基底なので第 $s$ 成分だけが 1、他はすべて 0 である：
+
+$$
+\vert s\rangle = \begin{pmatrix} 0 \\\\ \vdots \\\\ 0 \\\\ 1 \\\\ 0 \\\\ \vdots \\\\ 0 \end{pmatrix} \leftarrow s\ 番目
+$$
+
+したがって行列 $F_N$ をこのベクトルに掛けると、 $F_N$ の第 $s$ 列だけが抜き出される：
+
+$$
+F_N\vert s\rangle = \frac{1}{\sqrt{N}} \begin{pmatrix} 1 & \cdots & 1 & \cdots & 1 \\\\ 1 & \cdots & \omega_N^{s} & \cdots & \omega_N^{N-1} \\\\ \vdots & & \vdots & & \vdots \\\\ 1 & \cdots & \omega_N^{s(N-1)} & \cdots & \omega_N^{(N-1)^2} \end{pmatrix} \begin{pmatrix} 0 \\\\ \vdots \\\\ 1 \\\\ \vdots \\\\ 0 \end{pmatrix} = \frac{1}{\sqrt{N}} \begin{pmatrix} 1 \\\\ \omega_N^{s} \\\\ \omega_N^{2s} \\\\ \vdots \\\\ \omega_N^{(N-1)s} \end{pmatrix}
+$$
+
+これをケット表記で書き直すと：
 
 $$
 F_N\vert s\rangle = \sum_{k=0}^{N-1} (F_N)_{ks} \vert k\rangle
@@ -254,7 +266,7 @@ $$
 
 入力は $\vert s\rangle$ という1つの基底状態だが、 $F_N$ を掛けることで $N$ 個の基底状態 $\vert k\rangle$ の重ね合わせに変換される。これがフーリエ変換の本質であり、1つの「位置」の情報がすべての「周波数」に広がる操作である。
 
-これは和の添字を $k \to j$ と読み替えれば $\frac{1}{\sqrt{N}}\sum_j \omega_N^{js}\vert j\rangle$ であり、上の式と完全に一致する。したがって：
+これは和の添字を $k \to j$ と読み替えれば $\frac{1}{\sqrt{N}}\sum_j \omega_N^{js}\vert j\rangle$ であり、ステップ2の後の第1レジスタの状態と完全に一致する。したがって：
 
 $$
 \frac{1}{\sqrt{N}}\sum_{j=0}^{N-1} \omega_N^{js}\vert j\rangle = F_N \vert s\rangle
