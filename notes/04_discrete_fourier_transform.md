@@ -1,4 +1,4 @@
-# 03: 離散フーリエ変換（Discrete Fourier Transform）
+# 04: 離散フーリエ変換（Discrete Fourier Transform）
 
 ## なぜフーリエ変換を学ぶのか
 
@@ -432,7 +432,13 @@ $$
 入力列を $m$ だけシフトした $y_j = x_{(j-m) \bmod N}$ の DFT は：
 
 $$
-Y_k = \omega_N^{-mk} X_k
+Y_k = \omega_N^{mk} X_k
+$$
+
+**導出：** $l = j - m$ と置くと $j = l + m$ であり、 $j$ が $0$ から $N-1$ を動くとき $l$ も $\bmod N$ で同じ範囲を動く。
+
+$$
+Y_k = \frac{1}{\sqrt{N}} \sum_{j=0}^{N-1} x_{(j-m) \bmod N}  \omega_N^{jk} = \frac{1}{\sqrt{N}} \sum_{l=0}^{N-1} x_l  \omega_N^{(l+m)k} = \omega_N^{mk} \cdot \frac{1}{\sqrt{N}} \sum_{l=0}^{N-1} x_l  \omega_N^{lk} = \omega_N^{mk} X_k
 $$
 
 各周波数成分の絶対値は変わらず、位相だけが変化する。
