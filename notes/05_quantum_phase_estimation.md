@@ -240,7 +240,7 @@ $$
 
 一方、 $F_N\vert s\rangle$ がどのような状態になるかを、DFT 行列の定義から直接計算してみる。
 
-行列 $F_N$ をベクトル $\vert s\rangle$ に掛けるとは、出力の第 $k$ 成分を $\sum_j (F_N)_{kj} (\vert s\rangle)_j$ で計算することである。 $\vert s\rangle$ は計算基底なので第 $s$ 成分だけが 1、他はすべて 0 である：
+行列 $F_N$ をベクトル $\vert s\rangle$ に掛けるとは、出力の第 $k$ 成分を $\sum_j (F_N)_{kj} (\vert s\rangle)_j$ で計算することである。 $\vert s\rangle$ は $N$ 次元のベクトルだが、 $N = 2^n$ なので $n = \log_2 N$ 本の量子ビットで表現できる。例えば $N = 4$ なら $\vert s\rangle$ は 4 次元ベクトルだが、回路上は 2 本の量子ビットで済む。 $\vert s\rangle$ は計算基底なので第 $s$ 成分だけが 1、他はすべて 0 である：
 
 $$
 \vert s\rangle = \begin{pmatrix} 0 \\\\ \vdots \\\\ 0 \\\\ 1 \\\\ 0 \\\\ \vdots \\\\ 0 \end{pmatrix} \leftarrow s\ 番目
