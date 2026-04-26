@@ -38,7 +38,7 @@ $$
 | 周波数 | 連続値 $\xi$ | 離散値 $k = 0, 1, \ldots, N-1$ |
 | 核 | $e^{-2\pi i \xi t}$ | $\omega_N^{jk} = e^{2\pi i jk/N}$ |
 
-本質的な発想 ── 「複素指数関数との内積で周波数成分を取り出す」── は同じであり、連続を離散に、積分を有限和に置き換えただけである。
+本質的な発想 ── 「複素指数関数との内積で周波数成分を取り出す」── は同じであり、連続を離散に、積分を有限和に置き換えたものである。なお、核の指数の符号が連続版（$-$）と DFT（$+$）で異なるが、これはフーリエ変換の符号規約の違いであり、本ノートでは量子フーリエ変換（QFT）の慣習に合わせて正符号で定義する。
 
 量子計算で扱うのは $N = 2^n$ 個の確率振幅（有限個の複素数）なので、離散フーリエ変換で十分である。以降は DFT に絞って議論する。
 
@@ -210,6 +210,12 @@ $$
 \begin{pmatrix} X_0 \\\\ X_1 \\\\ \vdots \\\\ X_{N-1} \end{pmatrix} = F_N \begin{pmatrix} x_0 \\\\ x_1 \\\\ \vdots \\\\ x_{N-1} \end{pmatrix}
 $$
 
+$F_N$ を明示的に書くと：
+
+$$
+\begin{pmatrix} X_0 \\\\ X_1 \\\\ \vdots \\\\ X_{N-1} \end{pmatrix} = \frac{1}{\sqrt{N}} \begin{pmatrix} 1 & 1 & 1 & \cdots & 1 \\\\ 1 & \omega_N & \omega_N^2 & \cdots & \omega_N^{N-1} \\\\ 1 & \omega_N^2 & \omega_N^4 & \cdots & \omega_N^{2(N-1)} \\\\ \vdots & \vdots & \vdots & \ddots & \vdots \\\\ 1 & \omega_N^{N-1} & \omega_N^{2(N-1)} & \cdots & \omega_N^{(N-1)^2} \end{pmatrix} \begin{pmatrix} x_0 \\\\ x_1 \\\\ \vdots \\\\ x_{N-1} \end{pmatrix}
+$$
+
 ### ユニタリ性
 
 DFT 行列はユニタリ行列である：
@@ -246,14 +252,6 @@ $$
 ---
 
 ## 具体例： $N = 2$ の DFT
-
-### DFT 行列
-
-DFT 行列の定義 $(F_N)_{kj} = \frac{1}{\sqrt{N}} \omega_N^{jk} = \frac{1}{\sqrt{N}} \left(e^{2\pi i / N}\right)^{jk}$ を $N \times N$ の行列として明示的に書くと：
-
-$$
-F_N = \frac{1}{\sqrt{N}} \begin{pmatrix} 1 & 1 & 1 & \cdots & 1 \\\\ 1 & \omega_N & \omega_N^2 & \cdots & \omega_N^{N-1} \\\\ 1 & \omega_N^2 & \omega_N^4 & \cdots & \omega_N^{2(N-1)} \\\\ \vdots & \vdots & \vdots & \ddots & \vdots \\\\ 1 & \omega_N^{N-1} & \omega_N^{2(N-1)} & \cdots & \omega_N^{(N-1)^2} \end{pmatrix}
-$$
 
 $N = 2$ の場合、 $\omega_2 = e^{2\pi i / 2} = -1$ なので：
 
@@ -311,7 +309,7 @@ $$
 
 各成分の計算を明示する（ $i^n$ の値は 4 周期で $1, i, -1, -i$ を繰り返す）：
 
-| $jk$ | $jk \mod 4$ | $i^{jk}$ |
+| $j \times k$ | $jk \mod 4$ | $i^{jk}$ |
 |------|-------------|-----------|
 | 0 | 0 | $1$ |
 | 1 | 1 | $i$ |
@@ -460,13 +458,17 @@ $N$ 個のデータに対する DFT を定義どおりに計算すると：
 
 ## DFT と量子状態の対応
 
-$N = 2^n$ のとき、 $N$ 個の複素数の列 $(x_0, x_1, \ldots, x_{N-1})$ は $n$ 量子ビットの状態ベクトルとみなせる：
+$N = 2^n$ のとき、正規化条件 $\sum_j \lvert x_j\rvert^2 = 1$ を満たす $N$ 個の複素数の列 $(x_0, x_1, \ldots, x_{N-1})$ は $n$ 量子ビットの状態ベクトルとみなせる：
 
 $$
-\vert\psi\rangle = \sum_{j=0}^{N-1} x_j \vert j\rangle
+\vert\psi\rangle = \sum_{j=0}^{N-1} x_j \vert j\rangle = x_0 \vert 0\rangle + x_1 \vert 1\rangle + \cdots + x_{N-1} \vert N{-}1\rangle = \begin{pmatrix} x_0 \\\\ x_1 \\\\ \vdots \\\\ x_{N-1} \end{pmatrix}
 $$
 
-ここで $\vert j\rangle$ は $j$ の2進数表現に対応する計算基底である（例： $N = 4 = 2^2$ なので量子ビットは $n = 2$ 個であり、 $\vert 0\rangle = \vert 00\rangle$, $\vert 1\rangle = \vert 01\rangle$, $\vert 2\rangle = \vert 10\rangle$, $\vert 3\rangle = \vert 11\rangle$）。
+ここで $\vert j\rangle$ は $j$ の2進数表現に対応する計算基底である。例えば $N = 4 = 2^2$ なので量子ビットは $n = 2$ 個であり：
+
+$$
+\vert 0\rangle = \vert 00\rangle = \begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{pmatrix}, \quad \vert 1\rangle = \vert 01\rangle = \begin{pmatrix} 0 \\\\ 1 \\\\ 0 \\\\ 0 \end{pmatrix}, \quad \vert 2\rangle = \vert 10\rangle = \begin{pmatrix} 0 \\\\ 0 \\\\ 1 \\\\ 0 \end{pmatrix}, \quad \vert 3\rangle = \vert 11\rangle = \begin{pmatrix} 0 \\\\ 0 \\\\ 0 \\\\ 1 \end{pmatrix}
+$$
 
 DFT を適用した結果は：
 

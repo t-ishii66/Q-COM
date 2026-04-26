@@ -469,12 +469,12 @@ $$
  \overset{ CU^{2^k} }{\longrightarrow} 
 \frac{1}{\sqrt{N}}\sum_j e^{2\pi ij\varphi}\vert j\rangle\vert u\rangle
  \overset{ \text{QFT}^{-1} }{\longrightarrow} 
-\vert\tilde{s}\rangle\vert u\rangle
+\vert s\rangle\vert u\rangle
 $$
 
 ### 出力
 
-計数レジスタの測定結果 $\tilde{s}$ から $\tilde{\varphi} = \tilde{s}/2^n$ を位相の推定値とする。
+計数レジスタの測定結果 $s$ から $\varphi \approx s/2^n$ を位相の推定値とする。
 
 ### 計算量
 
@@ -507,13 +507,23 @@ $$
 
 ## まとめ
 
+### QPE の設定と変数の関係
+
+QPE は $U\vert u\rangle = e^{2\pi i\varphi}\vert u\rangle$ から位相 $\varphi$ を推定する。位相 $\varphi$ は $0 \le \varphi < 1$ に制限する。
+
+計数レジスタのビット数を $n$ とし、$N = 2^n$ と置く。$\varphi = s/N$（$s$ は整数）と書けるとき、QPE は測定結果として $s$ を確率 1 で返す。測定で得られた $s$ から $\varphi = s/2^n$ として位相を復元する。
+
+$\varphi$ が $s/2^n$ の形で正確に表せない場合は、最も近い $s$ が最大確率で得られる（近似）。
+
+### 一覧
+
 | 概念 | 内容 |
 |------|------|
 | 目標 | $U\vert u\rangle = e^{2\pi i\varphi}\vert u\rangle$ から位相 $\varphi$ を推定する |
 | 核心的なアイデア | 位相キックバック + 逆量子フーリエ変換 |
 | 回路構成 | $H^{\otimes n}$ → 制御 $U^{2^k}$ → $\text{QFT}^{-1}$ → 測定 |
-| 精度 | $n$ ビットの計数レジスタで、高い確率で $\lvert\varphi - \tilde{\varphi}\rvert \le 2^{-n}$ |
-| 正確な場合 | $\varphi = s/2^n$ なら確率 1 で正しい値が得られる |
-| 近似の場合 | 最近接の値が高確率で得られる。ビット数追加で確率を向上できる |
+| 測定結果 | 整数 $s$。位相の推定値は $\varphi \approx s/2^n$ |
+| 正確な場合 | $\varphi = s/2^n$ なら確率 1 で正しい $s$ が得られる |
+| 近似の場合 | 最近接の $s$ が高確率で得られる |
 | 固有ベクトルが未知の場合 | 重ね合わせを入力すれば固有値と固有ベクトルを同時に取得 |
-| 応用 | Shor のアルゴリズム、量子化学、量子シミュレーション |
+| 応用 | Shor のアルゴリズム（ノート06）、量子化学、量子シミュレーション |

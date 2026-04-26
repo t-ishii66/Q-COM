@@ -97,7 +97,7 @@ $$
 \vert\psi\rangle = \alpha_{00}\vert 00\rangle + \alpha_{01}\vert 01\rangle + \alpha_{10}\vert 10\rangle + \alpha_{11}\vert 11\rangle
 $$
 
-正規化条件は $\lvert\alpha_{00}\rvert^2 + \lvert\alpha_{01}\rvert^2 + \lvert\alpha_{10}\rvert^2 + \lvert\alpha_{11}\rvert^2 = 1$ である。
+測定すると、 $\vert 00\rangle$ が確率 $\lvert\alpha_{00}\rvert^2$ で、 $\vert 01\rangle$ が確率 $\lvert\alpha_{01}\rvert^2$ で、 $\vert 10\rangle$ が確率 $\lvert\alpha_{10}\rvert^2$ で、 $\vert 11\rangle$ が確率 $\lvert\alpha_{11}\rvert^2$ で得られる。正規化条件は $\lvert\alpha_{00}\rvert^2 + \lvert\alpha_{01}\rvert^2 + \lvert\alpha_{10}\rvert^2 + \lvert\alpha_{11}\rvert^2 = 1$ である。
 
 ### テンソル積
 
@@ -249,7 +249,7 @@ $\vert\Phi^+\rangle = \frac{\vert 00\rangle + \vert 11\rangle}{\sqrt{2}}$ の第
 - **$\vert 0\rangle$ が出た場合（確率 $1/2$）：** 全体の状態は $\vert 00\rangle$ に射影される。第2量子ビット $q_2$ は確実に $\vert 0\rangle$。
 - **$\vert 1\rangle$ が出た場合（確率 $1/2$）：** 全体の状態は $\vert 11\rangle$ に射影される。第2量子ビット $q_2$ は確実に $\vert 1\rangle$。
 
-つまり、 $q_1$ の測定結果が $q_2$ の状態を **即座に決定する**。測定前は $q_2$ 単独の状態が定まっておらず、 $q_1$ の測定によって初めて確定する。これがエンタングルメントの本質的な特徴である。
+つまり、 $q_1$ の測定結果を知った観測者は、その結果に条件づけて $q_2$ の状態を $\vert 0\rangle$ または $\vert 1\rangle$ と予測できる。測定前は $q_2$ 単独の状態が定まっておらず、 $q_1$ の測定結果によって初めて確定する。これがエンタングルメントの本質的な特徴である。ただし、 $q_2$ だけを見た測定統計は $q_1$ の測定の有無によらず同じ（ $\vert 0\rangle$ と $\vert 1\rangle$ が各 $1/2$ ）であり、この相関だけで情報を送ることはできない。
 
 積状態 $\vert +\rangle\vert 0\rangle = \frac{\vert 00\rangle + \vert 10\rangle}{\sqrt{2}}$ と比較すると違いが明確になる。この場合：
 
@@ -266,5 +266,5 @@ $\vert\Phi^+\rangle = \frac{\vert 00\rangle + \vert 11\rangle}{\sqrt{2}}$ の第
 |------|-----------|-----------|
 | 取りうる値 | 0 または 1 | $\alpha\vert 0\rangle + \beta\vert 1\rangle$ |
 | 情報量 | 1ビット | 測定で得られるのは1ビット |
-| 状態空間 | $\{0, 1\}$（離散） | ブロッホ球（連続） |
-| 複製 | 自由にコピー可能 | 不可能（量子複製不可能定理） |
+| 状態空間 | $\{0, 1\}$（離散） | ブロッホ球面（純粋状態、連続） |
+| 複製 | 自由にコピー可能 | 未知の任意状態の完全コピーは不可能（量子複製不可能定理） |
