@@ -46,7 +46,7 @@
 
 # クレジット
 
-- 企画: t-ishii66
+- 企画: t-ishii66（大学で物理を学ぶ。システムエンジニア。英会話奮闘中。）
 - 制作: Claude Opus 4.6, t-ishii66
 - notesレビュー: t-ishii66
 - notebooksレビュー: t-ishii66
