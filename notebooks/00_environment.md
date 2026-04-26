@@ -1,24 +1,32 @@
-# 環境構築メモ
+# 環境構築
 
 ## 前提
 
-- macOS (Apple Silicon)
-- Homebrew 導入済み
-- `uv` 導入済み（`brew install uv`）
-- Python 3.10 が `/opt/homebrew/bin/python3.10` にある
+- Linux（Ubuntu 等）または macOS
+- Python 3.10 以上
+- `uv`（Python パッケージマネージャ）
+
+`uv` が未導入の場合：
+
+```bash
+# Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# macOS (Homebrew)
+brew install uv
+```
 
 ## 手順
 
 ### 1. 仮想環境の作成
 
-プロジェクトルートで:
+プロジェクトルートで：
 
 ```bash
 uv venv
 ```
 
 `uv` が利用可能な Python を自動検出し、`.venv/` を作成する。
-今回は Python 3.10.18 が選択された。
 
 ### 2. パッケージのインストール
 
@@ -39,53 +47,19 @@ uv pip install qiskit jupyter qiskit-aer matplotlib pylatexenc
 
 ```bash
 python3 -c "import qiskit; print(qiskit.__version__)"
-# → 2.3.1
-
 python3 -c "import qiskit_aer; print(qiskit_aer.__version__)"
-# → 0.17.2
 ```
 
-### 4. スクリプトの実行
-
-`src/` にある Python スクリプトは仮想環境を有効にした状態でそのまま実行できる：
-
-```bash
-source .venv/bin/activate
-python3 src/03_qft.py
-```
-
-ターミナルに QFT 回路の構造、計算例の結果、DFT 行列との一致確認が出力される。
-
-### 5. Jupyter Notebook の起動
+### 4. Jupyter Notebook の起動
 
 ```bash
 source .venv/bin/activate
 jupyter notebook
 ```
 
-ブラウザが開き、ファイル一覧が表示される。
-
-**注意：** Jupyter Notebook で実行できるのは `.ipynb` ファイルのみ。`.py` ファイルを選んでもソースがテキスト表示されるだけで、セル実行はできない。
-
-- `.py` スクリプト（`src/03_qft.py` など）→ ターミナルで `python3` で実行（手順4）
-- `.ipynb` ノートブック（`notes/03_discrete_fourier_transform.ipynb` など）→ Jupyter で開いて実行
-
-`notes/03_discrete_fourier_transform.ipynb` を開くと、ノートの数式と Qiskit のコード・回路図・グラフを一画面で確認できる。
-
-セルの実行は `Shift + Enter`（1セルずつ）または上部メニューの `Cell → Run All`（全セル一括）。
-
-## バージョン情報（2026-04-08 時点）
-
-- Python: 3.10.18
-- uv: 0.9.26
-- qiskit: 2.3.1
-- qiskit-aer: 0.17.2
-- matplotlib: 3.10.8
-- numpy: 2.2.6
-- scipy: 1.15.3
+`notebooks/` ディレクトリ内の `.ipynb` ファイルを開いて実行する。セルの実行は `Shift + Enter`（1セルずつ）または上部メニューの `Cell → Run All`（全セル一括）。
 
 ## 備考
 
 - `.venv/` は `.gitignore` に追加すること
 - `uv pip freeze > requirements.txt` でパッケージ一覧をエクスポートできる
-- `uv` は pip より大幅に高速（今回は全パッケージ数秒でインストール完了）
