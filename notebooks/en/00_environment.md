@@ -1,12 +1,12 @@
-# 環境構築
+# Environment Setup
 
-## 前提
+## Prerequisites
 
-- Linux（Ubuntu 等）または macOS
-- Python 3.10 以上
-- `uv`（Python パッケージマネージャ）
+- Linux (Ubuntu, etc.) or macOS
+- Python 3.10 or later
+- `uv` (Python package manager)
 
-`uv` が未導入の場合：
+If `uv` is not installed:
 
 ```bash
 # Linux
@@ -16,50 +16,50 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 brew install uv
 ```
 
-## 手順
+## Procedure
 
-### 1. 仮想環境の作成
+### 1. Creating the Virtual Environment
 
-プロジェクトルートで：
+In the project root:
 
 ```bash
 uv venv
 ```
 
-`uv` が利用可能な Python を自動検出し、`.venv/` を作成する。
+`uv` automatically detects the available Python and creates `.venv/`.
 
-### 2. パッケージのインストール
+### 2. Installing Packages
 
 ```bash
 source .venv/bin/activate
 uv pip install qiskit jupyter qiskit-aer matplotlib pylatexenc
 ```
 
-| パッケージ | 用途 |
+| Package | Purpose |
 |-----------|------|
-| `qiskit` | 量子回路の構築・シミュレーション（コア） |
-| `qiskit-aer` | 高性能シミュレータバックエンド |
-| `jupyter` | Notebook 環境 |
-| `matplotlib` | 回路図・ヒストグラムの描画 |
-| `pylatexenc` | 回路図中の LaTeX レンダリング |
+| `qiskit` | Quantum circuit construction and simulation (core) |
+| `qiskit-aer` | High-performance simulator backend |
+| `jupyter` | Notebook environment |
+| `matplotlib` | Drawing circuit diagrams and histograms |
+| `pylatexenc` | LaTeX rendering in circuit diagrams |
 
-### 3. 動作確認
+### 3. Verifying Installation
 
 ```bash
 python3 -c "import qiskit; print(qiskit.__version__)"
 python3 -c "import qiskit_aer; print(qiskit_aer.__version__)"
 ```
 
-### 4. Jupyter Notebook の起動
+### 4. Launching Jupyter Notebook
 
 ```bash
 source .venv/bin/activate
 jupyter notebook
 ```
 
-`notebooks/` ディレクトリ内の `.ipynb` ファイルを開いて実行する。セルの実行は `Shift + Enter`（1セルずつ）または上部メニューの `Cell → Run All`（全セル一括）。
+Open and run `.ipynb` files in the `notebooks/` directory. Run cells with `Shift + Enter` (one at a time) or via `Cell → Run All` in the top menu (all cells at once).
 
-## 備考
+## Notes
 
-- `.venv/` は `.gitignore` に追加すること
-- `uv pip freeze > requirements.txt` でパッケージ一覧をエクスポートできる
+- Add `.venv/` to `.gitignore`
+- `uv pip freeze > requirements.txt` exports the list of packages
