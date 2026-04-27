@@ -1,5 +1,7 @@
 # 05: 量子位相推定（Quantum Phase Estimation）
 
+![Alice and Bob - Phase](../../images/alice-bob-phase.png)
+
 ## なぜ位相推定を学ぶのか
 
 量子位相推定（QPE）は、量子コンピュータの最も重要なサブルーチンの一つである。Shor の素因数分解アルゴリズム、量子化学シミュレーション、その他多くの量子アルゴリズムが QPE を内部で使用している。

@@ -1,5 +1,7 @@
 # 06: Shor's Algorithm
 
+![Alice and Bob - Shor](../../images/alice-bob-shor.png)
+
 ## What is Shor's Algorithm?
 
 Shor's algorithm is a quantum algorithm that efficiently performs prime factorization of a composite number $N$. It was published by Peter Shor in 1994.

@@ -1,5 +1,7 @@
 # 02: Quantum Gates
 
+![Alice and Bob](../../images/alice-bob-qcom.png)
+
 ## What are Quantum Gates?
 
 In classical computers, logic gates (AND, OR, NOT, etc.) are used to manipulate bits. In quantum computers, the corresponding operations are **quantum gates**.

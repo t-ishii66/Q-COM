@@ -1,5 +1,7 @@
 # 02: 量子ゲート（Quantum Gates）
 
+![Alice and Bob](../../images/alice-bob-qcom.png)
+
 ## 量子ゲートとは
 
 古典コンピュータではビットを操作する論理ゲート（AND, OR, NOT など）を用いる。量子コンピュータではこれに対応するものとして **量子ゲート** を用いる。

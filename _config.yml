@@ -1,0 +1,13 @@
+title: 量子ビットからショアのアルゴリズムへ
+description: A project to learn the fundamentals of quantum computing from qubits to Shor's algorithm.
+
+# Theme (uncomment one if you want a Jekyll theme)
+# theme: jekyll-theme-minimal
+
+# Files to exclude from the published site
+exclude:
+  - CLAUDE.md
+  - PROBLEMS.md
+  - .venv/
+  - .ipynb_checkpoints/
+  - "*.ipynb_checkpoints"

@@ -1,5 +1,7 @@
 # 04: 離散フーリエ変換（Discrete Fourier Transform）
 
+![Alice and Bob - Fourier](../../images/alice-bob-fourier.png)
+
 ## なぜフーリエ変換を学ぶのか
 
 量子コンピュータの重要なアルゴリズムの多くは **量子フーリエ変換（QFT）** を基盤としている。Shor の素因数分解アルゴリズム、位相推定アルゴリズムなどがその代表例である。
