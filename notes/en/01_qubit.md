@@ -1,5 +1,7 @@
 # 01: Qubit
 
+![Alice and Bob - Qubit](../../images/alice-bob-entangle.png)
+
 ## Comparison with Classical Bits
 
 The basic unit of a classical computer is the **bit**, which takes one of two values: 0 or 1.

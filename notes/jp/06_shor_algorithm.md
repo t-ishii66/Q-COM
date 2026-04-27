@@ -1,5 +1,7 @@
 # 06: Shor のアルゴリズム（Shor's Algorithm）
 
+![Alice and Bob - Shor](../../images/alice-bob-shor.png)
+
 ## Shor のアルゴリズムとは
 
 Shor のアルゴリズムは、合成数 $N$ の素因数分解を効率的に行う量子アルゴリズムである。1994年に Peter Shor によって発表された。

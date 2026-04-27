@@ -1,5 +1,7 @@
 # 01: 量子ビット（Qubit）
 
+![Alice and Bob - Qubit](../../images/alice-bob-entangle.png)
+
 ## 古典ビットとの対比
 
 古典コンピュータの基本単位は **ビット（bit）** であり、0 または 1 のどちらか一方の値を取る。

@@ -1,5 +1,7 @@
 # 03: 量子テレポーテーション（Quantum Teleportation）
 
+![Alice and Bob - Teleportation](../../images/alice-bob-tel.png)
+
 ## 量子テレポーテーションとは
 
 量子テレポーテーションは、エンタングルメントと古典通信を利用して、ある量子ビットの状態を離れた場所にある別の量子ビットに転送するプロトコルである。

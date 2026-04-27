@@ -1,5 +1,7 @@
 # 03: Quantum Teleportation
 
+![Alice and Bob - Teleportation](../../images/alice-bob-tel.png)
+
 ## What is Quantum Teleportation?
 
 Quantum teleportation is a protocol that uses entanglement and classical communication to transfer the state of one qubit to another qubit at a distant location.

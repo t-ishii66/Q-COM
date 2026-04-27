@@ -1,5 +1,7 @@
 # 05: Quantum Phase Estimation (QPE)
 
+![Alice and Bob - Phase](../../images/alice-bob-phase.png)
+
 ## Why Learn Phase Estimation?
 
 Quantum Phase Estimation (QPE) is one of the most important subroutines in quantum computing. Shor's factoring algorithm, quantum chemistry simulations, and many other quantum algorithms use QPE internally.

@@ -1,56 +1,59 @@
-# 量子ビットからショアのアルゴリズムへ
+# From Qubits to Shor's Algorithm
 
-量子コンピュータの基礎を、理論ノートと Qiskit による実装の両面から学ぶプロジェクトです。
+![Alice and Bob](images/alice-bob-top.png)
 
-## 構成
+A project to learn the fundamentals of quantum computing from both sides — theoretical notes and Qiskit implementations.
 
-### `notes/` — 理論ノート
+日本語版: [README-jp.md](README-jp.md)
 
-教科書的な記述で、量子コンピュータの物理・数学を解説します。
+## Structure
 
-| ファイル | 内容 |
+### `notes/en/` — Theoretical Notes
+
+Textbook-style descriptions of the physics and mathematics of quantum computing.
+
+| File | Content |
 |---|---|
-| 00 | 環境構築 |
-| 01 | 量子ビット |
-| 02 | 量子ゲート |
-| 03 | 量子テレポーテーション |
-| 04 | 離散フーリエ変換 |
-| 05 | 量子位相推定 (QPE) |
-| 06 | ショアのアルゴリズム |
+| [01_qubit.md](notes/en/01_qubit.md) | Qubit |
+| [02_quantum_gates.md](notes/en/02_quantum_gates.md) | Quantum Gates |
+| [03_quantum_teleportation.md](notes/en/03_quantum_teleportation.md) | Quantum Teleportation |
+| [04_discrete_fourier_transform.md](notes/en/04_discrete_fourier_transform.md) | Discrete Fourier Transform |
+| [05_quantum_phase_estimation.md](notes/en/05_quantum_phase_estimation.md) | Quantum Phase Estimation (QPE) |
+| [06_shor_algorithm.md](notes/en/06_shor_algorithm.md) | Shor's Algorithm |
 
-### `notebooks/` — Qiskit 実装
+### `notebooks/en/` — Qiskit Implementations
 
-理論ノートの内容を Qiskit で実装・検証する Jupyter ノートブックです。Qiskit の API や Python の構文についても解説しています。
+Jupyter notebooks that implement and verify the content of the theoretical notes in Qiskit. Also explains the Qiskit API and Python syntax.
 
-| ファイル | 内容 |
+| File | Content |
 |---|---|
-| 01 | 量子ビットの順序（教科書と Qiskit の規約の違い） |
-| 02 | Qiskit の基本操作（ゲート、測定、制御、逆操作など） |
-| 03 | 量子テレポーテーションの実装と検証 |
-| 04 | 量子フーリエ変換 (QFT) |
-| 05 | 量子位相推定 (QPE) |
-| 06 | ショアのアルゴリズム |
+| [00_environment.md](notebooks/en/00_environment.md) | Environment setup |
+| [01_qubit_ordering.ipynb](notebooks/en/01_qubit_ordering.ipynb) | Qubit ordering (differences between textbook and Qiskit conventions) |
+| [02_qiskit_basics.ipynb](notebooks/en/02_qiskit_basics.ipynb) | Basic Qiskit operations (gates, measurement, control, inverse, etc.) |
+| [03_quantum_teleportation.ipynb](notebooks/en/03_quantum_teleportation.ipynb) | Implementation and verification of quantum teleportation |
+| [04_quantum_fourier_transform.ipynb](notebooks/en/04_quantum_fourier_transform.ipynb) | Quantum Fourier Transform (QFT) |
+| [05_quantum_phase_estimation.ipynb](notebooks/en/05_quantum_phase_estimation.ipynb) | Quantum Phase Estimation (QPE) |
+| [06_shor_algorithm.ipynb](notebooks/en/06_shor_algorithm.ipynb) | Shor's Algorithm |
 
-## ビット順の規約
+## Bit Ordering Convention
 
-`notes/` と `notebooks/` ではビット順が異なります。
+The bit ordering differs between `notes/` and `notebooks/`.
 
-- **`notes/`（教科書）**: ビッグエンディアン、1始まり — $\vert q_1 q_2 q_3\rangle$
-- **`notebooks/`（Qiskit）**: リトルエンディアン、0始まり — $\vert q_2 q_1 q_0\rangle$
+- **`notes/` (textbook):** Big-endian, 1-indexed — $\vert q_1 q_2 q_3\rangle$
+- **`notebooks/` (Qiskit):** Little-endian, 0-indexed — $\vert q_2 q_1 q_0\rangle$
 
-詳しくは `notebooks/01_qubit_ordering.ipynb` を参照してください。
+See [notebooks/en/01_qubit_ordering.ipynb](notebooks/en/01_qubit_ordering.ipynb) for details.
 
-## 環境構築
+## Environment Setup
 
-`notebooks/00_environment.md` を参照してください。
+See [notebooks/en/00_environment.md](notebooks/en/00_environment.md).
 
-# クレジット
+# Credits
 
-- 企画: t-ishii66（大学で物理を学ぶ。システムエンジニア。英会話奮闘中。）
-- 制作: Claude Opus 4.6, t-ishii66
-- notesレビュー: t-ishii66
-- notebooksレビュー: t-ishii66
-- 発行日: 2026/4/x
-- バージョン: 0.0.0
-- 著作権: 本リポジトリの一部または全てを無断で流用することは出来ません。全てのコンテンツは著作権で守られています。
-
+- Planning: t-ishii66 (Studying physics in university. Systems engineer. Working hard on English conversation.)
+- Production: Claude Opus 4.6, t-ishii66
+- Notes review: t-ishii66
+- Notebooks review: t-ishii66
+- Publication date: 2026/4/28
+- Version: 1.0.0
+- Copyright(C) 2026 t-ishii66. All rights reserved.

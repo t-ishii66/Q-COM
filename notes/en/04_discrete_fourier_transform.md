@@ -1,5 +1,7 @@
 # 04: Discrete Fourier Transform (DFT)
 
+![Alice and Bob - Fourier](../../images/alice-bob-fourier.png)
+
 ## Why Learn the Fourier Transform?
 
 Many important quantum computing algorithms are built on the **Quantum Fourier Transform (QFT)**. Shor's factoring algorithm and the phase estimation algorithm are representative examples.
