@@ -307,7 +307,7 @@ $\vert 10\rangle$ の場合、 $Z\vert -\rangle = Z \frac{\vert 0\rangle - \vert
 
 > **注意：** 本文では量子ビットを $q_1, q_2, q_3$（1始まり）で記述しているが、回路図では $q_0, q_1, q_2$（0始まり）で表示される。インデックスが1つずれている点に注意。対応は $q_1 \to q_0$、$q_2 \to q_1$、$q_3 \to q_2$ である。
 
-![量子テレポーテーション回路](../images/03_teleportation.png)
+![量子テレポーテーション回路](../../images/03_teleportation.png)
 
 回路は3つのフェーズからなる：
 

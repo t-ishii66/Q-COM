@@ -64,7 +64,7 @@ QPE の回路は4つのステップからなる：
 3. **逆量子フーリエ変換**: 第1レジスタに $\text{QFT}^{-1}$ を適用
 4. **測定**: 第1レジスタを計算基底で測定
 
-![QPE 回路の概要](../images/05_qpe_general.png)
+![QPE 回路の概要](../../images/05_qpe_general.png)
 
 ---
 
@@ -312,7 +312,7 @@ $$
 
 $\varphi = 1/4$ とする。このとき $N = 2^n = 2^2 = 4$、 $s = \varphi \cdot N = 1$ である。
 
-![2ビット QPE 回路](../images/05_qpe_2bit.png)
+![2ビット QPE 回路](../../images/05_qpe_2bit.png)
 
 ### 初期状態
 

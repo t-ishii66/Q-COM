@@ -294,7 +294,7 @@ $\vert j\rangle$ や $\vert 1\rangle$ のような表記は、レジスタの複
 
 > **注意：** 本文では量子ビットを1始まりで記述しているが、回路図では0始まり（$q_0, q_1, \ldots$）で表示される。計数レジスタが $q_0$〜$q_3$、第2レジスタが $q_4$〜$q_7$ に対応する。
 
-![Shor のアルゴリズムの QPE 回路](../images/06_shor_circuit.png)
+![Shor のアルゴリズムの QPE 回路](../../images/06_shor_circuit.png)
 
 QPE の手順を、各ステップ後の状態とともに示す。初期状態は $\vert 0\rangle^{\otimes n} \otimes \vert 1\rangle$ である。
 
