@@ -41,12 +41,12 @@ Jupyter notebooks that implement and verify the content of the theoretical notes
 | File | Content |
 |---|---|
 | [00_environment.md](notebooks/en/00_environment.md) | Environment setup |
-| [01_qubit_ordering.ipynb](notebooks/en/01_qubit_ordering.ipynb) | Qubit ordering (differences between textbook and Qiskit conventions) |
-| [02_qiskit_basics.ipynb](notebooks/en/02_qiskit_basics.ipynb) | Basic Qiskit operations (gates, measurement, control, inverse, etc.) |
-| [03_quantum_teleportation.ipynb](notebooks/en/03_quantum_teleportation.ipynb) | Implementation and verification of quantum teleportation |
-| [04_quantum_fourier_transform.ipynb](notebooks/en/04_quantum_fourier_transform.ipynb) | Quantum Fourier Transform (QFT) |
-| [05_quantum_phase_estimation.ipynb](notebooks/en/05_quantum_phase_estimation.ipynb) | Quantum Phase Estimation (QPE) |
-| [06_shor_algorithm.ipynb](notebooks/en/06_shor_algorithm.ipynb) | Shor's Algorithm |
+| [01_qubit_ordering.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/en/01_qubit_ordering.ipynb) | Qubit ordering (differences between textbook and Qiskit conventions) |
+| [02_qiskit_basics.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/en/02_qiskit_basics.ipynb) | Basic Qiskit operations (gates, measurement, control, inverse, etc.) |
+| [03_quantum_teleportation.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/en/03_quantum_teleportation.ipynb) | Implementation and verification of quantum teleportation |
+| [04_quantum_fourier_transform.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/en/04_quantum_fourier_transform.ipynb) | Quantum Fourier Transform (QFT) |
+| [05_quantum_phase_estimation.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/en/05_quantum_phase_estimation.ipynb) | Quantum Phase Estimation (QPE) |
+| [06_shor_algorithm.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/en/06_shor_algorithm.ipynb) | Shor's Algorithm |
 
 ## Bit Ordering Convention
 
@@ -55,7 +55,7 @@ The bit ordering differs between `docs/` and `notebooks/`.
 - **`docs/` (textbook):** Big-endian, 1-indexed — $\vert q_1 q_2 q_3\rangle$
 - **`notebooks/` (Qiskit):** Little-endian, 0-indexed — $\vert q_2 q_1 q_0\rangle$
 
-See [notebooks/en/01_qubit_ordering.ipynb](notebooks/en/01_qubit_ordering.ipynb) for details.
+See [notebooks/en/01_qubit_ordering.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/en/01_qubit_ordering.ipynb) for details.
 
 ## Environment Setup
 

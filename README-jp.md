@@ -39,12 +39,12 @@ lang: ja
 | ファイル | 内容 |
 |---|---|
 | [00_environment.md](notebooks/jp/00_environment.md) | 環境構築 |
-| [01_qubit_ordering.ipynb](notebooks/jp/01_qubit_ordering.ipynb) | 量子ビットの順序（教科書と Qiskit の規約の違い） |
-| [02_qiskit_basics.ipynb](notebooks/jp/02_qiskit_basics.ipynb) | Qiskit の基本操作（ゲート、測定、制御、逆操作など） |
-| [03_quantum_teleportation.ipynb](notebooks/jp/03_quantum_teleportation.ipynb) | 量子テレポーテーションの実装と検証 |
-| [04_quantum_fourier_transform.ipynb](notebooks/jp/04_quantum_fourier_transform.ipynb) | 量子フーリエ変換 (QFT) |
-| [05_quantum_phase_estimation.ipynb](notebooks/jp/05_quantum_phase_estimation.ipynb) | 量子位相推定 (QPE) |
-| [06_shor_algorithm.ipynb](notebooks/jp/06_shor_algorithm.ipynb) | ショアのアルゴリズム |
+| [01_qubit_ordering.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/jp/01_qubit_ordering.ipynb) | 量子ビットの順序（教科書と Qiskit の規約の違い） |
+| [02_qiskit_basics.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/jp/02_qiskit_basics.ipynb) | Qiskit の基本操作（ゲート、測定、制御、逆操作など） |
+| [03_quantum_teleportation.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/jp/03_quantum_teleportation.ipynb) | 量子テレポーテーションの実装と検証 |
+| [04_quantum_fourier_transform.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/jp/04_quantum_fourier_transform.ipynb) | 量子フーリエ変換 (QFT) |
+| [05_quantum_phase_estimation.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/jp/05_quantum_phase_estimation.ipynb) | 量子位相推定 (QPE) |
+| [06_shor_algorithm.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/jp/06_shor_algorithm.ipynb) | ショアのアルゴリズム |
 
 ## ビット順の規約
 
@@ -53,7 +53,7 @@ lang: ja
 - **`docs/`（教科書）**: ビッグエンディアン、1始まり — $\vert q_1 q_2 q_3\rangle$
 - **`notebooks/`（Qiskit）**: リトルエンディアン、0始まり — $\vert q_2 q_1 q_0\rangle$
 
-詳しくは [notebooks/jp/01_qubit_ordering.ipynb](notebooks/jp/01_qubit_ordering.ipynb) を参照してください。
+詳しくは [notebooks/jp/01_qubit_ordering.ipynb](https://github.com/t-ishii66/Q-COM/blob/main/notebooks/jp/01_qubit_ordering.ipynb) を参照してください。
 
 ## 環境構築
 
