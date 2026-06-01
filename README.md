@@ -1,25 +1,38 @@
+---
+title: "From Qubits to Shor's Algorithm"
+description: "Learn the fundamentals of quantum computing — qubits, gates, teleportation, QFT, QPE, and Shor's algorithm — with textbook-style notes and Qiskit notebooks."
+keywords: "quantum computing, quantum algorithm, Shor's algorithm, Qiskit, quantum Fourier transform, QFT, quantum phase estimation, QPE, quantum teleportation, qubit, entanglement, Bell state, quantum gate, Hadamard, CNOT, Pauli, factoring, period finding, tutorial, documentation, open source, GitHub, Q-COM"
+permalink: /
+---
+
 # From Qubits to Shor's Algorithm
 
 ![Alice and Bob](images/alice-bob-top.png)
 
 A project to learn the fundamentals of quantum computing from both sides — theoretical notes and Qiskit implementations.
 
+<!-- SEO intro added by setup-github-pages; review and adjust -->
+
+If you have ever wanted to **build your own understanding of quantum computing** from the ground up — work through **qubits**, **quantum gates**, and **entanglement** step by step, see how the **quantum Fourier transform** and **quantum phase estimation** lead into **Shor's algorithm**, and verify every idea with runnable **Qiskit** code — this bilingual project is for you. Topics covered include **quantum teleportation**, **Bell states**, **Hadamard** and **CNOT** gates, the **QFT**, **QPE**, and **integer factoring** via period finding.
+
+<!-- /SEO intro -->
+
 日本語版: [README-jp.md](README-jp.md)
 
 ## Structure
 
-### `notes/en/` — Theoretical Notes
+### `docs/en/` — Theoretical Notes
 
 Textbook-style descriptions of the physics and mathematics of quantum computing.
 
 | File | Content |
 |---|---|
-| [01_qubit.md](notes/en/01_qubit.md) | Qubit |
-| [02_quantum_gates.md](notes/en/02_quantum_gates.md) | Quantum Gates |
-| [03_quantum_teleportation.md](notes/en/03_quantum_teleportation.md) | Quantum Teleportation |
-| [04_discrete_fourier_transform.md](notes/en/04_discrete_fourier_transform.md) | Discrete Fourier Transform |
-| [05_quantum_phase_estimation.md](notes/en/05_quantum_phase_estimation.md) | Quantum Phase Estimation (QPE) |
-| [06_shor_algorithm.md](notes/en/06_shor_algorithm.md) | Shor's Algorithm |
+| [01_qubit.md](docs/en/01_qubit.md) | Qubit |
+| [02_quantum_gates.md](docs/en/02_quantum_gates.md) | Quantum Gates |
+| [03_quantum_teleportation.md](docs/en/03_quantum_teleportation.md) | Quantum Teleportation |
+| [04_discrete_fourier_transform.md](docs/en/04_discrete_fourier_transform.md) | Discrete Fourier Transform |
+| [05_quantum_phase_estimation.md](docs/en/05_quantum_phase_estimation.md) | Quantum Phase Estimation (QPE) |
+| [06_shor_algorithm.md](docs/en/06_shor_algorithm.md) | Shor's Algorithm |
 
 ### `notebooks/en/` — Qiskit Implementations
 
@@ -37,9 +50,9 @@ Jupyter notebooks that implement and verify the content of the theoretical notes
 
 ## Bit Ordering Convention
 
-The bit ordering differs between `notes/` and `notebooks/`.
+The bit ordering differs between `docs/` and `notebooks/`.
 
-- **`notes/` (textbook):** Big-endian, 1-indexed — $\vert q_1 q_2 q_3\rangle$
+- **`docs/` (textbook):** Big-endian, 1-indexed — $\vert q_1 q_2 q_3\rangle$
 - **`notebooks/` (Qiskit):** Little-endian, 0-indexed — $\vert q_2 q_1 q_0\rangle$
 
 See [notebooks/en/01_qubit_ordering.ipynb](notebooks/en/01_qubit_ordering.ipynb) for details.

@@ -4,7 +4,7 @@
 
 ## ディレクトリ構成
 
-- `notes/jp/`, `notes/en/`: 理論ノート（Markdown）
+- `docs/jp/`, `docs/en/`: 理論ノート（Markdown）
 - `notebooks/jp/`, `notebooks/en/`: Qiskit による実装（Jupyter Notebook）
 - `images/`: 回路図やイラスト
 
@@ -12,14 +12,14 @@
 
 - **対象読者**: 大学1〜2年生（物理学・情報系の学生）
 - **言語**: 日本語が原本、英語版は翻訳
-- **`notes/`**: 教科書的な物理・数学の解説
+- **`docs/`**: 教科書的な物理・数学の解説
 - **`notebooks/`**: Qiskit による実装と実験。Qiskit の API や Python の構文も適宜解説する。
 
 ## ビット順の規約
 
-`notes/` と `notebooks/` でビット順が異なる。
+`docs/` と `notebooks/` でビット順が異なる。
 
-| | `notes/`（教科書） | `notebooks/`（Qiskit） |
+| | `docs/`（教科書） | `notebooks/`（Qiskit） |
 |---|---|---|
 | インデックス | 1 始まり | 0 始まり |
 | ケット表記 | $\vert q_1 q_2 q_3\rangle$（$q_1$ が最上位） | $\vert q_2 q_1 q_0\rangle$（$q_0$ が最下位） |
