@@ -1,0 +1,55 @@
+<!-- math rendering enabled by enable-github-pages-math -->
+<style>
+  /* Boxed display-math pattern: <table border="1"> wrapping a ```math
+     fence. Two problems to fix on top of the cayman theme:
+       1. cayman sets `.main-content table { display: block; width: 100%; }`
+          which (a) disables border-collapse (it only applies to display:
+          table), (b) forces full-width so margin: auto can't center, and
+          (c) makes the cell shrink-fit visible on the left with empty
+          space on the right — that's the stray vertical line.
+       2. The HTML4 `border="1"` attribute paints a border on both the
+          <table> and each <td>, giving a double line.
+     We scope our selector under .main-content (higher specificity than
+     the theme rule) so it wins reliably, restore display: table, collapse
+     the borders into one, shrink-fit the table, center it on the page,
+     and center the formula inside the cell. */
+  .main-content table[border="1"] {
+    display: table;
+    border-collapse: collapse;
+    margin: 1em auto;
+    width: auto;
+  }
+  .main-content table[border="1"] td {
+    text-align: center;
+    padding: 0.6em 1.4em;
+  }
+</style>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)'], ['$', '$']],
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    startup: {
+      pageReady: function () {
+        // Transform GitHub-style ```math fences (kramdown emits them as
+        // <pre><code class="language-math">) into display-math nodes so
+        // MathJax can typeset them. Without this, the raw LaTeX shows
+        // through as a code block on the published Pages site.
+        document.querySelectorAll('pre > code.language-math').forEach(function (code) {
+          var math = code.textContent;
+          var div = document.createElement('div');
+          div.textContent = '\\[' + math + '\\]';
+          code.parentNode.replaceWith(div);
+        });
+        return MathJax.startup.defaultPageReady();
+      }
+    }
+  };
+</script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

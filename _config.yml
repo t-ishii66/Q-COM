@@ -1,13 +1,46 @@
 title: "From Qubits to Shor's Algorithm"
-description: "A project to learn the fundamentals of quantum computing from qubits to Shor's algorithm."
+description: >-
+  A project to learn the fundamentals of quantum computing from qubits to
+  Shor's algorithm, with textbook-style theoretical notes and Qiskit
+  implementations. Topics include quantum gates, quantum teleportation,
+  the quantum Fourier transform, quantum phase estimation, and Shor's
+  algorithm. Bilingual (English / Japanese).
 
-# Theme (uncomment one if you want a Jekyll theme)
-# theme: jekyll-theme-minimal
+url: "https://t-ishii66.github.io"
+baseurl: "/Q-COM"
+repository: t-ishii66/Q-COM
 
-# Files to exclude from the published site
+theme: jekyll-theme-cayman
+
+author: t-ishii66
+lang: en
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
 exclude:
   - CLAUDE.md
   - PROBLEMS.md
+  - "*PROBLEMS*.md"
+  - "*.bak"
   - .venv/
   - .ipynb_checkpoints/
   - "*.ipynb_checkpoints"
+  - Makefile
+  - build/
+  - dist/
+  - target/
+  - node_modules/
+  - .vscode/
+  - "*.o"
+  - "*.so"
+  - "*.dylib"
+  - "*.exe"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  parse_block_html: true
