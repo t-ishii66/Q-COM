@@ -7,6 +7,8 @@ lang: ja
 
 # 量子ビットからショアのアルゴリズムへ
 
+> 数式や図をきれいな表示で読みたい場合は、GitHub Pages 版をご覧ください: <https://t-ishii66.github.io/Q-COM/README-jp.html>
+
 ![Alice and Bob](images/alice-bob-top.png)
 
 量子コンピュータの基礎を、理論ノートと Qiskit による実装の両面から学ぶプロジェクトです。

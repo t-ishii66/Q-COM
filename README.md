@@ -7,6 +7,8 @@ permalink: /
 
 # From Qubits to Shor's Algorithm
 
+> For a cleaner reading experience with properly rendered math and figures, visit the GitHub Pages site: <https://t-ishii66.github.io/Q-COM/>
+
 ![Alice and Bob](images/alice-bob-top.png)
 
 A project to learn the fundamentals of quantum computing from both sides — theoretical notes and Qiskit implementations.
